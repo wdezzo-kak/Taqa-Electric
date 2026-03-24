@@ -9,15 +9,16 @@ interface ServiceCardProps {
   iconColor: string
   buttonText: string
   accentColor: string
+  isRtl?: boolean
   delay?: number
 }
 
-function ServiceCard({ module, title, description, icon, iconColor, buttonText, accentColor, delay = 0 }: ServiceCardProps) {
+function ServiceCard({ module, title, description, icon, iconColor, buttonText, accentColor, isRtl = false, delay = 0 }: ServiceCardProps) {
   return (
     <Animation delay={delay} direction="up" className="h-full">
       <div className="group relative bg-surface-container p-5 md:p-8 h-full flex flex-col justify-between transition-all duration-500 hover:bg-surface-container-high hover:-translate-y-1">
         {/* Icon positioned in top-right with enough margin */}
-        <div className="absolute top-4 right-4 md:top-6 md:right-6 opacity-20 group-hover:opacity-40 transition-all duration-300 z-0">
+        <div className={`absolute top-4 ${isRtl ? 'left-4' : 'right-4'} md:top-6 ${isRtl ? 'md:left-6' : 'md:right-6'} opacity-20 group-hover:opacity-40 transition-all duration-300 z-0`}>
           <span className={`material-symbols-outlined ${iconColor} text-5xl md:text-6xl lg:text-7xl`}>
             {icon}
           </span>
@@ -41,7 +42,7 @@ function ServiceCard({ module, title, description, icon, iconColor, buttonText, 
           </button>
         </div>
         
-        <div className={`absolute -bottom-8 -right-8 w-32 h-32 ${accentColor.replace('text-', 'bg-')}/10 blur-[50px] group-hover:${accentColor.replace('text-', 'bg-')}/20 transition-all duration-500`}></div>
+        <div className={`absolute -bottom-8 ${isRtl ? '-left-8' : '-right-8'} w-32 h-32 ${accentColor.replace('text-', 'bg-')}/10 blur-[50px] group-hover:${accentColor.replace('text-', 'bg-')}/20 transition-all duration-500`}></div>
       </div>
     </Animation>
   )
@@ -65,9 +66,11 @@ interface ServicesProps {
     service3Desc: string
     service3Btn: string
   }
+  lang?: 'en' | 'ar'
 }
 
-export default function Services({ t }: ServicesProps) {
+export default function Services({ t, lang = 'en' }: ServicesProps) {
+  const isRtl = lang === 'ar'
   const services = [
     {
       module: t.service1Module,
@@ -133,7 +136,7 @@ export default function Services({ t }: ServicesProps) {
             key={index}
             className={`${index !== 0 && index !== 2 ? 'border-x border-y-0 md:border-x border-y-0 border-outline-variant/5' : 'border-y md:border-y-0 border-outline-variant/5'} h-full`}
           >
-            <ServiceCard {...service} delay={300 + (index * 150)} />
+            <ServiceCard {...service} isRtl={isRtl} delay={300 + (index * 150)} />
           </div>
         ))}
       </div>

@@ -9,10 +9,12 @@ interface HeroProps {
     heroSubtitle: string
     heroCta: string
     heroProjects: string
+    companyName: string
   }
+  lang: 'en' | 'ar'
 }
 
-export default function Hero({ t }: HeroProps) {
+export default function Hero({ t, lang }: HeroProps) {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
@@ -20,7 +22,7 @@ export default function Hero({ t }: HeroProps) {
   }, [])
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-start px-6 lg:px-16 overflow-hidden pt-20 md:pt-24">
+    <section className="relative h-screen w-full flex items-center justify-start px-6 lg:px-16 overflow-hidden">
       {/* Background with parallax feel */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -38,8 +40,20 @@ export default function Hero({ t }: HeroProps) {
 
       {/* Content with animations */}
       <div className={`relative z-10 max-w-3xl lg:max-w-4xl xl:max-w-5xl transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        {/* Logo and Brand */}
+        <div className={`flex items-center gap-2 md:gap-3 mb-2 md:mb-3 transition-all duration-700 delay-0 ${loaded ? 'opacity-100 translate-x-0' : lang === 'ar' ? 'opacity-0 translate-x-4' : 'opacity-0 -translate-x-4'}`}>
+          <img 
+            alt="TAQA Electric Logo" 
+            className="h-[3em] w-auto" 
+            src="/white-logo.png"
+          />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-headline font-black tracking-tighter uppercase leading-[0.9] text-[#d32f2f]">
+            {t.companyName}
+          </h1>
+        </div>
+
         {/* Badge */}
-        <div className={`mb-4 md:mb-6 inline-flex items-center gap-2 px-4 py-1 bg-primary-container/20 border-l-4 border-primary-container text-primary font-rajdhani text-xs tracking-[0.4em] uppercase font-bold transition-all duration-700 delay-100 ${loaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+        <div className={`mb-2 md:mb-3 inline-flex items-center gap-2 px-4 py-1 bg-primary-container/20 ${lang === 'ar' ? 'border-r-4 border-l-0' : 'border-l-4'} border-primary-container text-primary font-rajdhani text-xs tracking-[0.4em] uppercase font-bold transition-all duration-700 delay-100 ${loaded ? 'opacity-100 translate-x-0' : lang === 'ar' ? 'opacity-0 translate-x-4' : 'opacity-0 -translate-x-4'}`}>
           <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
           {t.heroBadge}
         </div>
