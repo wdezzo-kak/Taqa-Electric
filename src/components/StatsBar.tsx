@@ -1,11 +1,24 @@
 import Animation from './Animation'
 
-export default function StatsBar() {
+interface StatsBarProps {
+  t: {
+    stats1: string
+    stats2: string
+    stats3: string
+    stats4: string
+    statsVal1: string
+    statsVal2: string
+    statsVal3: string
+    statsVal4: string
+  }
+}
+
+export default function StatsBar({ t }: StatsBarProps) {
   const stats = [
-    { value: '99.9%', label: 'Grid Reliability', color: 'text-primary' },
-    { value: '500k+', label: 'Panels Installed', color: 'text-tertiary' },
-    { value: '25+', label: 'Years of Expertise', color: 'text-white' },
-    { value: 'KRT', label: 'Operational HQ', color: 'text-primary-container' },
+    { value: t.statsVal1, label: t.stats1, color: 'text-primary' },
+    { value: t.statsVal2, label: t.stats2, color: 'text-tertiary' },
+    { value: t.statsVal3, label: t.stats3, color: 'text-white' },
+    { value: t.statsVal4, label: t.stats4, color: 'text-primary-container' },
   ]
 
   return (

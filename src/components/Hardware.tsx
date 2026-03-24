@@ -33,26 +33,41 @@ function HardwareItem({ name, subtitle, image, delay = 0 }: HardwareItemProps) {
   )
 }
 
-export default function Hardware() {
+interface HardwareProps {
+  t: {
+    hardwareTitle: string
+    hardwareSubtitle: string
+    hw1Name: string
+    hw1Sub: string
+    hw2Name: string
+    hw2Sub: string
+    hw3Name: string
+    hw3Sub: string
+    hw4Name: string
+    hw4Sub: string
+  }
+}
+
+export default function Hardware({ t }: HardwareProps) {
   const hardwareItems = [
     {
-      name: 'Jinko N-Type Panels',
-      subtitle: 'Bifacial Efficiency',
+      name: t.hw1Name,
+      subtitle: t.hw1Sub,
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAl7F-3SfRUkqx399Dtlv307C5Rg9dOM2L_M1icp5nDxfPJmJ0ZyyM90gsh6uR_WBDIWOiI_-hkc37et_cX6ZWUpCx8ZNBa4ZrpgDrYfLUPer4jUg6456hus37UKvQJIYctokeJFABnJnLtKvEotdGaURASCj6fWy6r5DQYXYhvEaiUt4ZMAZo2tXWYJw7_TOov97IGLyyUN-g0oKcZDyBEwxHuRgMTyfzJ2yoKw5msAWpSET_NuSX2ZgbJMamatsK4CAWZhj2XoQ7-'
     },
     {
-      name: 'MaxPower Hybrid',
-      subtitle: 'Smart Management',
+      name: t.hw2Name,
+      subtitle: t.hw2Sub,
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqBDmaRkAFFFRNm6Phzh3i5lxChq3JQo_j2nd912k6A3iY7g3XNFx_ddBiGwf0M78V_2SbRbRHpd0h1ef4xQiBnI5ulEcpdtwnkTqZBahjwxRVZ4biwpRLSjKHOf74d--2rUY57b4QpSteYgB-dbp1eRbXHiCIBMv5Ko97J1gIs_dF39uGu5dRcnJyVvS4ybtj7Fpo4j2j_U7UNApz5p4aSejSGCj8u6YNdW2D0yL2QYeeqYhhCtkhQi779-_4FrtjMqty-I3UwiHy'
     },
     {
-      name: 'Go Green Lithium',
-      subtitle: 'Long-Cycle Storage',
+      name: t.hw3Name,
+      subtitle: t.hw3Sub,
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA1fBjEvBLW-D16Z7NHCKNvNQDL9R8hXCfly_FITILJsD7-CsEHkQH6rbKCZv6Vq-aUeaOnGxmBnOAWspzMuJmb3qF2M0wsLomCeHI9fzeW5oZreaRFLMQWn1vKNrxWxLSAUfZB86qDUc7if1MmE8znPJMmVoVDXQ-_8F36DCeD_rhL80CfuKoo4QL0IdHK_VO_u2Q52BNSoxTg5Xh4zWj_ULWSbcU5-pp2zBqELhWhdAIjc60zPVV57VQ4BxACo67Wzkd5Vg_HiKMn'
     },
     {
-      name: 'INVT Solar VFD',
-      subtitle: 'Irrigation Control',
+      name: t.hw4Name,
+      subtitle: t.hw4Sub,
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAfQHB-hMsKISuL9LJP_s4N9EDzEbHqM5webIhpZabQ2lIbe8f3rYWG7MEYkW3gSCeTWZdzmForOPuFVjcSQ7uViC5phLo18VRD8cHuGALOq1VKE1egpqzEACEQSFxH74d3AtDOpKss9MJvlp60dwSb6oeZAuqwN591y0y7ebHGtUDoQ8VIOTGcVfMgZ9mlghYzTaf2TSwib2f-O4KGJ2zHwSp-XeU67IR4AFdNCw0nC9isWm1DR1yZGOpLaPJkHVW9TKSc-a0wwHBU'
     },
   ]
@@ -62,10 +77,10 @@ export default function Hardware() {
       <Animation direction="up">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-headline font-black uppercase tracking-tighter">
-            Machined Performance
+            {t.hardwareTitle}
           </h2>
           <p className="text-on-surface-variant tracking-[0.3em] uppercase text-xs mt-3 md:mt-4 font-bold">
-            Authorized Equipment &amp; Components. Engineered for the Sahara.
+            {t.hardwareSubtitle}
           </p>
         </div>
       </Animation>

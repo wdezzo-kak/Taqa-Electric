@@ -1,22 +1,41 @@
 import Animation from './Animation'
 
-export default function About() {
+interface AboutProps {
+  t: {
+    aboutLabel: string
+    aboutTitle: string
+    aboutDesc: string
+    aboutDesc2: string
+    techDivision: string
+    certExperts: string
+    feature1Title: string
+    feature1Desc: string
+    feature2Title: string
+    feature2Desc: string
+    feature3Title: string
+    feature3Desc: string
+    feature4Title: string
+    feature4Desc: string
+  }
+}
+
+export default function About({ t }: AboutProps) {
   const features = [
     {
-      title: 'TECHNICAL PRECISION',
-      description: 'Engineering-grade hardware from global leaders like Jinko Solar and INVT.'
+      title: t.feature1Title,
+      description: t.feature1Desc
     },
     {
-      title: 'LOCAL EXPERTISE',
-      description: "Deep understanding of Sudan's environmental and logistical landscape."
+      title: t.feature2Title,
+      description: t.feature2Desc
     },
     {
-      title: 'END-TO-END SOLUTIONS',
-      description: 'From initial audit and design to deployment and technical support.'
+      title: t.feature3Title,
+      description: t.feature3Desc
     },
     {
-      title: 'SUSTAINABLE IMPACT',
-      description: 'Reducing diesel reliance and powering a greener future for Sudanese industry.'
+      title: t.feature4Title,
+      description: t.feature4Desc
     },
   ]
 
@@ -41,10 +60,10 @@ export default function About() {
                 engineering
               </span>
               <p className="text-[10px] font-bold tracking-[0.4em] text-on-surface-variant uppercase">
-                Technical Division
+                {t.techDivision}
               </p>
               <p className="text-white font-headline font-bold text-base md:text-lg lg:text-xl uppercase mt-1 lg:mt-2">
-                Certified Industrial Experts
+                {t.certExperts}
               </p>
             </div>
           </Animation>
@@ -54,23 +73,23 @@ export default function About() {
         <div className="w-full md:w-1/2">
           <Animation delay={200} direction="left">
             <span className="text-primary font-headline font-bold uppercase tracking-[0.4em] text-xs">
-              A DECADE OF INDUSTRIAL EXCELLENCE
+              {t.aboutLabel}
             </span>
           </Animation>
           
           <Animation delay={300} direction="up">
             <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-headline font-black uppercase tracking-tighter mt-4 md:mt-6 mb-6 md:mb-8 leading-[0.95]">
-              ENGINEERING <br/><span className="text-gradient-red">SUDAN'S FUTURE</span>
+              {t.aboutTitle}
             </h2>
           </Animation>
           
           <Animation delay={400} direction="up">
             <div className="space-y-4 md:space-y-6 text-on-surface-variant text-sm md:text-base lg:text-lg max-w-lg xl:max-w-xl mb-8 md:mb-10 lg:mb-12">
               <p>
-                Founded on the principles of reliability and technical precision, TAQA ELECTRIC has grown into Sudan's premier energy engineering firm. Our journey began with a simple mission: to provide the hardware and expertise necessary for national progress. Today, we stand as the bridge between global innovation and local execution.
+                {t.aboutDesc}
               </p>
               <p>
-                We don't just supply components; we design ecosystems. Our engineers specialize in high-capacity industrial solar grids, robust residential systems, and specialized agricultural solutions that withstand the unique challenges of the Sahara. Every watt we manage is a testament to our commitment to Sudan's sustainable transformation.
+                {t.aboutDesc2}
               </p>
             </div>
           </Animation>

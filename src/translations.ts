@@ -14,6 +14,7 @@ export const translations = {
     navProjects: 'Projects',
     navContact: 'Contact',
     navInitiate: 'INITIATE',
+    companyName: 'TAQA ELECTRIC',
     
     // Hero
     heroBadge: 'Energy Infrastructure HQ',
@@ -137,7 +138,9 @@ export const translations = {
     ctaBtn: 'REQUEST TECHNICAL CONSULTATION',
     
     // Footer
+    footerDesc: "Sudan's leading solar engineering firm. Deploying reliable energy infrastructure for residential, agricultural, and industrial sectors.",
     footerTagline: 'Sudan HQ • Al-Amarat, Khartoum',
+    footerCompanyName: 'TAQA ELECTRIC',
     systems: 'Systems',
     support: 'Support',
     contactTech: 'Contact Tech Ops',
@@ -167,6 +170,7 @@ export const translations = {
     navProjects: 'المشاريع',
     navContact: 'اتصل بنا',
     navInitiate: 'ابدأ الآن',
+    companyName: 'طاقة إلكتريك',
     
     // Hero
     heroBadge: 'المقر الرئيسي للبنية التحتية للطاقة',
@@ -290,7 +294,9 @@ export const translations = {
     ctaBtn: 'طلب استشارة فنية',
     
     // Footer
-    footerTagline: 'مقر السودان • العمارات، الخرطوم',
+    footerDesc: 'شركة الطاقة الشمسية الرائدة في السودان. نقوم بنشر البنية التحتية للطاقة الموثوقة للقطاعات السكنية والزراعية والصناعية.',
+    footerTagline: 'مقر السودان • العمارات، الخرطن',
+    footerCompanyName: 'طاقة إلكتريك',
     systems: 'الأنظمة',
     support: 'الدعم',
     contactTech: 'الاتصال بالعمليات الفنية',

@@ -1,7 +1,34 @@
 import { useState } from 'react'
 import Animation from './Animation'
 
-export default function Contact() {
+interface ContactProps {
+  t: {
+    contactLabel: string
+    contactTitle: string
+    contactSubtitle: string
+    nameLabel: string
+    namePlaceholder: string
+    companyLabel: string
+    companyPlaceholder: string
+    serviceLabel: string
+    serviceOpt1: string
+    serviceOpt2: string
+    serviceOpt3: string
+    serviceOpt4: string
+    messageLabel: string
+    messagePlaceholder: string
+    submitBtn: string
+    contactHQ: string
+    phoneLine: string
+    emailTerminal: string
+    locationBase: string
+    location: string
+    engineersOnline: string
+    engineersMsg: string
+  }
+}
+
+export default function Contact({ t }: ContactProps) {
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -30,13 +57,13 @@ export default function Contact() {
           <div className="lg:col-span-7">
             <Animation delay={100} direction="up">
               <span className="text-primary font-headline font-bold uppercase tracking-[0.4em] text-xs">
-                Partner with TAQA
+                {t.contactLabel}
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-headline font-black uppercase tracking-tighter mt-4 md:mt-6 mb-6 md:mb-8 leading-tight">
-                INITIATE TECHNICAL <br/>CONSULTATION
+                {t.contactTitle}
               </h2>
               <p className="text-on-surface-variant text-sm md:text-base lg:text-lg max-w-lg xl:max-w-xl mb-8 md:mb-10 lg:mb-12">
-                Start your journey towards energy autonomy. Our engineering division is ready to architect a sustainable framework tailored to your specific industrial or residential requirements.
+                {t.contactSubtitle}
               </p>
             </Animation>
             <Animation delay={200} direction="up">
@@ -44,28 +71,28 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-white/70 ml-1">
-                      Full Name
+                      {t.nameLabel}
                     </label>
                     <input 
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full bg-surface-container border-none focus:ring-1 focus:ring-primary-container p-3 md:p-4 text-white font-body" 
-                      placeholder="John Doe" 
+                      placeholder={t.namePlaceholder} 
                       type="text"
                       required
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-white/70 ml-1">
-                      Company Name
+                      {t.companyLabel}
                     </label>
                     <input 
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full bg-surface-container border-none focus:ring-1 focus:ring-primary-container p-3 md:p-4 text-white font-body" 
-                      placeholder="Acme Corp" 
+                      placeholder={t.companyPlaceholder} 
                       type="text"
                       required
                     />
@@ -73,7 +100,7 @@ export default function Contact() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-white/70 ml-1">
-                    Service Required
+                    {t.serviceLabel}
                   </label>
                   <select 
                     name="service"
@@ -81,22 +108,22 @@ export default function Contact() {
                     onChange={handleChange}
                     className="w-full bg-surface-container border-none focus:ring-1 focus:ring-primary-container p-3 md:p-4 text-white font-body appearance-none"
                   >
-                    <option>Solar Solutions</option>
-                    <option>Industrial Grids</option>
-                    <option>Agricultural Pumping</option>
-                    <option>Technical Consultancy</option>
+                    <option>{t.serviceOpt1}</option>
+                    <option>{t.serviceOpt2}</option>
+                    <option>{t.serviceOpt3}</option>
+                    <option>{t.serviceOpt4}</option>
                   </select>
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-white/70 ml-1">
-                    Technical Brief / Message
+                    {t.messageLabel}
                   </label>
                   <textarea 
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full bg-surface-container border-none focus:ring-1 focus:ring-primary-container p-3 md:p-4 text-white font-body min-h-[120px] md:min-h-[150px]" 
-                    placeholder="Describe your power requirements..."
+                    placeholder={t.messagePlaceholder}
                     required
                   />
                 </div>
@@ -104,7 +131,7 @@ export default function Contact() {
                   type="submit"
                   className="bg-primary-container text-on-primary-container px-6 md:px-8 lg:px-10 py-3 md:p-4 lg:py-5 font-headline font-bold uppercase tracking-widest text-sm clipped-corner hover:scale-[1.02] transition-transform neon-glow-red w-full md:w-auto"
                 >
-                  SUBMIT REQUEST
+                  {t.submitBtn}
                 </button>
               </form>
             </Animation>
@@ -114,7 +141,7 @@ export default function Contact() {
             <div className="bg-surface-container p-6 md:p-8 lg:p-10 xl:p-12 space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 border border-outline-variant/10">
               <div>
                 <h4 className="text-white font-headline font-bold uppercase tracking-widest text-sm mb-4 md:mb-6 flex items-center gap-3">
-                  <span className="w-6 md:w-8 h-px bg-primary"></span> Direct Technical HQ
+                  <span className="w-6 md:w-8 h-px bg-primary"></span> {t.contactHQ}
                 </h4>
                 <div className="space-y-4 md:space-y-6 lg:space-y-8">
                   <a 
@@ -126,9 +153,9 @@ export default function Contact() {
                     <span className="material-symbols-outlined text-primary-container text-xl md:text-2xl lg:text-3xl">phone_in_talk</span>
                     <div>
                       <p className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60 mb-1">
-                        Phone Line
+                        {t.phoneLine}
                       </p>
-                      <p className="text-base md:text-lg lg:text-2xl font-headline font-bold text-white tracking-tight">
+                      <p className="text-base md:text-lg lg:text-2xl font-headline font-bold text-white tracking-tight" dir="ltr">
                         +249 912 345 678
                       </p>
                     </div>
@@ -140,7 +167,7 @@ export default function Contact() {
                     <span className="material-symbols-outlined text-primary-container text-xl md:text-2xl lg:text-3xl">alternate_email</span>
                     <div>
                       <p className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60 mb-1">
-                        Email Terminal
+                        {t.emailTerminal}
                       </p>
                       <p className="text-base md:text-lg lg:text-2xl font-headline font-bold text-white tracking-tight lowercase">
                         tech@taqa-electric.com
@@ -151,10 +178,10 @@ export default function Contact() {
                     <span className="material-symbols-outlined text-primary-container text-xl md:text-2xl lg:text-3xl">location_on</span>
                     <div>
                       <p className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60 mb-1">
-                        Operational Base
+                        {t.locationBase}
                       </p>
                       <p className="text-base md:text-lg lg:text-2xl font-headline font-bold text-white tracking-tight uppercase">
-                        Al-Amarat, Khartoum
+                        {t.location}
                       </p>
                     </div>
                   </div>
@@ -164,11 +191,11 @@ export default function Contact() {
                 <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                   <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface-variant">
-                    Engineers Online
+                    {t.engineersOnline}
                   </span>
                 </div>
                 <p className="text-xs md:text-sm text-on-surface-variant leading-relaxed italic">
-                  Our technical staff is currently monitoring grid performance. Consultation responses typical within 4 operational hours.
+                  {t.engineersMsg}
                 </p>
               </div>
             </div>

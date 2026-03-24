@@ -1,10 +1,24 @@
 import Animation from './Animation'
 
-export default function ProjectCase() {
+interface ProjectCaseProps {
+  t: {
+    projectLabel: string
+    projectQuote: string
+    projectTitle: string
+    projectDesc: string
+    projectDesc2: string
+    projectFeat1: string
+    projectFeat2: string
+    projectFeat3: string
+    projectBtn: string
+  }
+}
+
+export default function ProjectCase({ t }: ProjectCaseProps) {
   const features = [
-    '2.4MW Peak Output Capability',
-    'Remote Performance Telemetry',
-    'Hybrid Grid Stabilization Tech',
+    t.projectFeat1,
+    t.projectFeat2,
+    t.projectFeat3,
   ]
 
   return (
@@ -24,7 +38,7 @@ export default function ProjectCase() {
         <Animation delay={400} direction="up">
           <div className="absolute bottom-0 left-0 bg-primary-container p-4 md:p-6 lg:p-8 xl:p-10 clipped-corner translate-y-2 md:translate-y-4 lg:translate-y-6 md:translate-x-6 lg:translate-x-12 neon-glow-red hover:scale-105 transition-transform duration-300">
             <p className="font-headline font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase leading-tight text-on-primary-container">
-              ENGINEERING LARGE-SCALE IMPACT.
+              {t.projectQuote}
             </p>
           </div>
         </Animation>
@@ -34,23 +48,23 @@ export default function ProjectCase() {
       <div className="w-full md:w-1/2">
         <Animation delay={200} direction="right">
           <span className="text-tertiary font-headline font-bold uppercase tracking-[0.4em] text-xs">
-            Featured Project
+            {t.projectLabel}
           </span>
         </Animation>
         
         <Animation delay={300} direction="up">
           <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-headline font-black uppercase tracking-tighter mt-4 md:mt-6 mb-6 md:mb-8 leading-[0.95]">
-            Northern Sudan <br/><span className="text-gradient-red">2MW Grid</span>
+            {t.projectTitle}
           </h2>
         </Animation>
         
         <Animation delay={400} direction="up">
           <div className="space-y-4 md:space-y-6 text-on-surface-variant text-sm md:text-base lg:text-lg max-w-lg xl:max-w-xl">
             <p>
-              Our recent project in Northern Sudan features a 2MW industrial grid utilizing Jinko N-Type panels and INVT industrial controllers.
+              {t.projectDesc}
             </p>
             <p>
-              We reduced diesel reliance by 85% for this agricultural processing hub, providing stabilized energy for critical manufacturing operations in high-heat environments.
+              {t.projectDesc2}
             </p>
           </div>
         </Animation>
@@ -68,7 +82,7 @@ export default function ProjectCase() {
         
         <Animation delay={600} direction="up" className="mt-8 md:mt-10 lg:mt-12">
           <button className="group bg-surface-container-high border border-outline-variant/30 text-on-surface px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 font-headline font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-primary-container hover:border-primary-container transition-all duration-300 clipped-corner">
-            <span className="relative z-10">VIEW TECHNICAL CASE STUDY</span>
+            <span className="relative z-10">{t.projectBtn}</span>
           </button>
         </Animation>
       </div>

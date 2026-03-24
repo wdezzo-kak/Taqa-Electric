@@ -47,45 +47,65 @@ function ServiceCard({ module, title, description, icon, iconColor, buttonText, 
   )
 }
 
-export default function Services() {
+interface ServicesProps {
+  t: {
+    servicesLabel: string
+    servicesTitle: string
+    servicesSubtitle: string
+    service1Module: string
+    service1Title: string
+    service1Desc: string
+    service1Btn: string
+    service2Module: string
+    service2Title: string
+    service2Desc: string
+    service2Btn: string
+    service3Module: string
+    service3Title: string
+    service3Desc: string
+    service3Btn: string
+  }
+}
+
+export default function Services({ t }: ServicesProps) {
   const services = [
     {
-      module: 'Module 01',
+      module: t.service1Module,
       title: (
         <>
-          Intelligent<br/>Home Energy
+          {t.service1Title}
         </>
       ),
-      description: 'We combine Jinko Solar efficiency with MaxPower Hybrid Inverters and Go Green Batteries to ensure 24/7 cooling and connectivity with Sudan\'s most reliable residential setup.',
+      description: t.service1Desc,
       icon: 'home_work',
       iconColor: 'text-tertiary',
-      buttonText: 'DEPLOY SYSTEM',
+      buttonText: t.service1Btn,
       accentColor: 'text-tertiary',
     },
     {
-      module: 'Module 02',
+      module: t.service2Module,
       title: (
         <>
-          Solar Pumping<br/>&amp; Irrigation
+          {t.service2Title}
         </>
       ),
-      description: 'Transform your farm with INVT VFD controllers. We pair them with rugged Jinko Solar panels to provide reliable water flow without the cost of diesel. Built for the Sahara.',
+      description: t.service2Desc,
       icon: 'agriculture',
       iconColor: 'text-primary-container',
-      buttonText: 'VIEW SCHEMATICS',
+      buttonText: t.service2Btn,
       accentColor: 'text-primary-container',
     },
     {
-      module: 'Module 03',
+      module: t.service3Module,
       title: (
         <>
-          High-Scale<br/>Industrial Solar
+          {t.service3Title}
         </>
       ),
-      description: 'Engineering-grade power for factories. Using Jinko N-Type technology, we build high-capacity grids that slash operational costs and secure the energy future for Sudanese industry.',
+      description: t.service3Desc,
       icon: 'factory',
       iconColor: 'text-white',
-      buttonText: 'CONSULT ENGINEERS',
+      buttonText: t.service3Btn,
       accentColor: 'text-white',
     },
   ]
@@ -95,15 +115,15 @@ export default function Services() {
       <div className="flex flex-col md:flex-row justify-between items-end mb-6 md:mb-10 gap-4 md:gap-6">
         <Animation direction="left" className="max-w-xl lg:max-w-2xl">
           <span className="text-tertiary font-headline text-xs md:text-sm tracking-[0.5em] uppercase font-bold">
-            Precision Corporate Solutions
+            {t.servicesLabel}
           </span>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-headline font-black uppercase tracking-tighter mt-2 md:mt-4">
-            Service Modules
+            {t.servicesTitle}
           </h2>
         </Animation>
         <Animation delay={200} direction="right">
           <p className="text-on-surface-variant max-w-sm lg:max-w-md text-sm border-l-2 border-primary-container pl-4 leading-relaxed">
-            Engineering-grade power frameworks for Sudanese industry, agriculture, and high-end residential estates.
+            {t.servicesSubtitle}
           </p>
         </Animation>
       </div>

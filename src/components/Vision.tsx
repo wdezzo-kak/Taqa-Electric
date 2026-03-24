@@ -1,6 +1,20 @@
 import Animation from './Animation'
 
-export default function Vision() {
+interface VisionProps {
+  t: {
+    visionLabel: string
+    visionTitle: string
+    visionQuote: string
+    visionDesc: string
+    visionDesc2: string
+    visionStats1: string
+    visionStats1Label: string
+    visionStats2: string
+    visionStats2Label: string
+  }
+}
+
+export default function Vision({ t }: VisionProps) {
   return (
     <section className="py-8 md:py-16 px-4 md:px-10 bg-surface-container-low flex flex-col md:flex-row gap-8 md:gap-16 items-center">
       {/* Image side */}
@@ -18,7 +32,7 @@ export default function Vision() {
         <Animation delay={400} direction="up">
           <div className="absolute bottom-0 left-0 bg-primary-container p-4 md:p-6 lg:p-8 clipped-corner translate-y-4 md:translate-y-6 lg:translate-y-8 md:translate-x-8 lg:translate-x-12 neon-glow-red hover:scale-105 transition-transform duration-300">
             <p className="font-headline font-bold text-lg md:text-xl lg:text-2xl uppercase leading-tight text-on-primary-container">
-              Building the Grid of Sudan's Future.
+              {t.visionQuote}
             </p>
           </div>
         </Animation>
@@ -28,39 +42,39 @@ export default function Vision() {
       <div className="w-full md:w-1/2">
         <Animation delay={200} direction="right">
           <span className="text-tertiary font-headline font-bold uppercase tracking-[0.4em] text-xs">
-            Our Vision
+            {t.visionLabel}
           </span>
         </Animation>
         
         <Animation delay={300} direction="up">
           <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-headline font-black uppercase tracking-tighter mt-4 md:mt-6 mb-6 md:mb-8 leading-[0.95]">
-            LIGHTING SUDAN'S <span className="text-gradient-red">FUTURE</span>
+            {t.visionTitle}
           </h2>
         </Animation>
         
         <Animation delay={400} direction="up">
           <div className="space-y-4 md:space-y-6 text-on-surface-variant text-sm md:text-base lg:text-lg max-w-lg xl:max-w-xl">
             <p>
-              At TAQA ELECTRIC, we don't just supply power; we architect growth. Our vision is rooted in Sudan's vast potential for energy autonomy. We are bridging the gap between traditional energy limitations and a clean-tech future.
+              {t.visionDesc}
             </p>
             <p>
-              By integrating world-class Jinko Solar technology with specialized industrial expertise, we provide the reliable backbone for the nation's agricultural, residential, and industrial evolution. From the fields to the factory floor, we deliver performance you can trust.
+              {t.visionDesc2}
             </p>
           </div>
         </Animation>
         
         <Animation delay={500} direction="up" className="mt-6 md:mt-8 lg:mt-12 flex gap-6 md:gap-8 lg:gap-12">
           <div className="group">
-            <h4 className="text-primary font-headline font-bold text-2xl md:text-3xl lg:text-4xl group-hover:text-tertiary transition-colors">150+</h4>
+            <h4 className="text-primary font-headline font-bold text-2xl md:text-3xl lg:text-4xl group-hover:text-tertiary transition-colors">{t.visionStats1}</h4>
             <p className="text-[10px] tracking-widest uppercase text-on-surface-variant font-bold mt-2">
-              Projects Completed
+              {t.visionStats1Label}
             </p>
           </div>
           <div className="w-px h-10 md:h-12 bg-outline-variant/30"></div>
           <div className="group">
-            <h4 className="text-primary font-headline font-bold text-2xl md:text-3xl lg:text-4xl group-hover:text-tertiary transition-colors">0.0%</h4>
+            <h4 className="text-primary font-headline font-bold text-2xl md:text-3xl lg:text-4xl group-hover:text-tertiary transition-colors">{t.visionStats2}</h4>
             <p className="text-[10px] tracking-widest uppercase text-on-surface-variant font-bold mt-2">
-              Failure Rate
+              {t.visionStats2Label}
             </p>
           </div>
         </Animation>

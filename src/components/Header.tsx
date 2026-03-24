@@ -1,6 +1,20 @@
 import { useState, useEffect } from 'react'
 
-export default function Header() {
+interface HeaderProps {
+  t: {
+    navHome: string
+    navOurVision: string
+    navAboutUs: string
+    navServices: string
+    navTechnology: string
+    navProjects: string
+    navContact: string
+    navInitiate: string
+    companyName: string
+  }
+}
+
+export default function Header({ t }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -24,13 +38,13 @@ export default function Header() {
   }, [mobileMenuOpen])
 
   const navLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'Our Vision', href: '#vision' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Technology', href: '#hardware' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
+    { label: t.navHome, href: '#hero' },
+    { label: t.navOurVision, href: '#vision' },
+    { label: t.navAboutUs, href: '#about' },
+    { label: t.navServices, href: '#services' },
+    { label: t.navTechnology, href: '#hardware' },
+    { label: t.navProjects, href: '#projects' },
+    { label: t.navContact, href: '#contact' },
   ]
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, closeMenu = false) => {
@@ -63,10 +77,10 @@ export default function Header() {
             <img 
               alt="TAQA Electric Logo" 
               className="h-6 md:h-7 lg:h-8 w-auto" 
-              src="/logo.png"
+              src="/white-logo.png"
             />
             <span className="text-sm md:text-base lg:text-xl font-black tracking-tighter text-[#d32f2f] uppercase font-rajdhani">
-              TAQA ELECTRIC
+              {t.companyName}
             </span>
           </div>
           <div className="hidden lg:flex gap-3 xl:gap-4 font-rajdhani tracking-tighter uppercase font-bold text-[14px] xl:text-[16px]">
@@ -86,11 +100,11 @@ export default function Header() {
               onClick={scrollToContact}
               className="bg-primary-container text-on-primary-container font-rajdhani tracking-tighter uppercase font-bold text-[10px] md:text-xs px-3 md:px-4 py-1.5 md:py-2 clipped-corner hover:bg-primary transition-all duration-200"
             >
-              INITIATE
+              {t.navInitiate}
             </button>
             {/* Hamburger - shown on tablet 768-1024px */}
             <button 
-              className="hamburger md:block xl:hidden"
+              className="hamburger lg:block xl:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -127,7 +141,7 @@ export default function Header() {
           onClick={(e) => { scrollToContact(e); setMobileMenuOpen(false); }}
           className="mt-6 bg-primary-container text-on-primary-container px-8 py-3 font-headline font-bold uppercase tracking-widest clipped-corner"
         >
-          INITIATE
+          {t.navInitiate}
         </button>
       </div>
     </>
