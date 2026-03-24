@@ -1,0 +1,77 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      screens: {
+        'xs': '400px',
+      },
+      colors: {
+        "primary-fixed": "#ffdad6",
+        "surface-variant": "#353534",
+        "tertiary": "#ffba38",
+        "on-secondary-fixed-variant": "#41484b",
+        "inverse-on-surface": "#313030",
+        "surface-container-highest": "#353534",
+        "tertiary-fixed": "#ffdeac",
+        "on-primary-fixed": "#410003",
+        "secondary-fixed": "#dde3e7",
+        "surface-bright": "#393939",
+        "surface-tint": "#ffb3ac",
+        "background": "#131313",
+        "outline": "#ab8985",
+        "primary-container": "#d32f2f",
+        "inverse-primary": "#ba1a20",
+        "error": "#ffb4ab",
+        "on-error": "#690005",
+        "on-background": "#e5e2e1",
+        "on-tertiary-fixed-variant": "#604100",
+        "on-primary": "#680008",
+        "secondary-fixed-dim": "#c1c8cb",
+        "primary": "#ffb3ac",
+        "on-primary-container": "#fff2f0",
+        "on-secondary": "#2b3134",
+        "error-container": "#93000a",
+        "on-error-container": "#ffdad6",
+        "surface-dim": "#131313",
+        "on-surface-variant": "#e4beba",
+        "on-tertiary-container": "#fff3e5",
+        "surface-container-lowest": "#0e0e0e",
+        "on-surface": "#e5e2e1",
+        "on-secondary-fixed": "#161d1f",
+        "surface": "#131313",
+        "tertiary-fixed-dim": "#ffba38",
+        "primary-fixed-dim": "#ffb3ac",
+        "inverse-surface": "#e5e2e1",
+        "on-secondary-container": "#afb6b9",
+        "on-primary-fixed-variant": "#930010",
+        "on-tertiary": "#432c00",
+        "secondary": "#c1c8cb",
+        "outline-variant": "#5b403d",
+        "surface-container-low": "#1c1b1b",
+        "secondary-container": "#41484b",
+        "surface-container": "#201f1f",
+        "tertiary-container": "#956700",
+        "on-tertiary-fixed": "#281900",
+        "surface-container-high": "#2a2a2a"
+      },
+      fontFamily: {
+        "headline": ["Space Grotesk", "Rajdhani", "sans-serif"],
+        "body": ["Inter", "sans-serif"],
+        "label": ["Inter", "sans-serif"],
+        "rajdhani": ["Rajdhani", "sans-serif"]
+      },
+      borderRadius: {
+        "DEFAULT": "0rem",
+        "lg": "0rem",
+        "xl": "0rem",
+        "full": "9999px"
+      }
+    },
+  },
+  plugins: [],
+}

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TAQA ELECTRIC | Powering Sudan's Potential</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;family=Rajdhani:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#ffdad6",
+                        "surface-variant": "#353534",
+                        "tertiary": "#ffba38",
+                        "on-secondary-fixed-variant": "#41484b",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-highest": "#353534",
+                        "tertiary-fixed": "#ffdeac",
+                        "on-primary-fixed": "#410003",
+                        "secondary-fixed": "#dde3e7",
+                        "surface-bright": "#393939",
+                        "surface-tint": "#ffb3ac",
+                        "background": "#131313",
+                        "outline": "#ab8985",
+                        "primary-container": "#d32f2f",
+                        "inverse-primary": "#ba1a20",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "on-primary": "#680008",
+                        "secondary-fixed-dim": "#c1c8cb",
+                        "primary": "#ffb3ac",
+                        "on-primary-container": "#fff2f0",
+                        "on-secondary": "#2b3134",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131313",
+                        "on-surface-variant": "#e4beba",
+                        "on-tertiary-container": "#fff3e5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#161d1f",
+                        "surface": "#131313",
+                        "tertiary-fixed-dim": "#ffba38",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-container": "#afb6b9",
+                        "on-primary-fixed-variant": "#930010",
+                        "on-tertiary": "#432c00",
+                        "secondary": "#c1c8cb",
+                        "outline-variant": "#5b403d",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-container": "#41484b",
+                        "surface-container": "#201f1f",
+                        "tertiary-container": "#956700",
+                        "on-tertiary-fixed": "#281900",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk", "Rajdhani"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "rajdhani": ["Rajdhani"]
+                    },
+                    borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .clipped-corner {
+            clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 0 100%);
+        }
+        .blueprint-grid {
+            background-image: radial-gradient(circle, #393939 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .circuit-trace {
+            background-image: linear-gradient(90deg, rgba(211,47,47,0.1) 1px, transparent 1px),
+                              linear-gradient(rgba(211,47,47,0.1) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        .neon-glow-red {
+            box-shadow: 0 0 20px rgba(211,47,47,0.3);
+        }
+        .sovereign-mask {
+            mask-image: linear-gradient(to right, black 60%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-white">
+<!-- Utility Top-Bar -->
+<div class="fixed top-0 w-full z-[60] bg-surface-container-lowest border-b border-outline-variant/10 px-10 py-2 flex justify-between items-center text-[10px] font-bold tracking-widest uppercase text-on-surface-variant/80">
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">call</span> +249 912 345 678</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">mail</span> ops@taqa-electric.com</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:text-primary transition-colors">AR</button>
+<span class="opacity-30">|</span>
+<button class="text-primary">EN</button>
+</div>
+</div>
+<!-- TopNavBar -->
+<nav class="fixed top-8 w-full z-50 bg-[#131313]/80 backdrop-blur-xl flex justify-between items-center px-10 py-4 border-b border-outline-variant/5">
+<div class="flex items-center gap-4">
+<img alt="TAQA Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uhBzuqWSAtw6YC9jxPrQ-TA2SL_5oSXaNyUhqzO32hdNcN7HzIw2bjGU3IByYTaAsGDxvskTd51BlktNrtwBe6V8L4Fy7psaM_2tj3Uihe8jW_haAHBSKHwtvHp1xto8N5iFc1iPoMXtz9gdCrorqJj4hYuM68Ek1UPlDquKafnjUK9eN44VJJWMcl_49DjyZzxwotAp7J0GPY07Oi0Behz7JewXuCTlUfqCLs7g5V0aGsoL2z4PiP8kD4vLKTfSsbN2vWWUIOZ3A"/>
+<span class="text-2xl font-black tracking-tighter text-[#d32f2f] uppercase font-rajdhani">TAQA ELECTRIC</span>
+</div>
+<div class="hidden md:flex gap-6 font-rajdhani tracking-tighter uppercase font-bold text-[11px]">
+<a class="text-white hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-white/70 hover:text-white transition-colors" href="#">Our Vision</a>
+<a class="text-white/70 hover:text-white transition-colors" href="#">About Us</a>
+<a class="text-white/70 hover:text-white transition-colors" href="#">Services</a>
+<a class="text-white/70 hover:text-white transition-colors" href="#">Technology</a>
+<a class="text-white/70 hover:text-white transition-colors" href="#">Projects</a>
+<a class="text-white/70 hover:text-white transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white/70 cursor-pointer hover:text-primary transition-colors">settings_input_component</span>
+<span class="material-symbols-outlined text-white/70 cursor-pointer hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<button class="bg-primary-container text-on-primary-container font-rajdhani tracking-tighter uppercase font-bold text-xs px-6 py-2 clipped-corner hover:bg-primary transition-all duration-200">
+            INITIATE POWER
+        </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-start px-10 overflow-hidden pt-8">
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic sunrise over high-tech solar facility" class="w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTbKUB09PcVG5vgDFfZ688DtL4wii90LdS0n-fe6qPR9XITST60GiYtW2EUkPgYg1WKEXG6LuudsVzK7wOtEmMVWycl8SGzMlyEVpFevg45vAlHkvkuw450vEI18YNzp2zyQI2XhjlM0BmjpekXgtxedcrR378ebQLxj1Fng9pyaP5MeXMBbAbA4QbRA6cL4Lh3tVQpP9QsQaLjPRkrm1Ikau0KfRjnitnjtPc5wX1LzdVsyPmZY0d_k-g1RypX_uBG3dkgFn2g-Zp"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+<div class="absolute inset-0 blueprint-grid opacity-20"></div>
+</div>
+<div class="relative z-10 max-w-5xl">
+<div class="mb-6 inline-flex items-center gap-2 px-4 py-1 bg-primary-container/20 border-l-4 border-primary-container text-primary font-rajdhani text-xs tracking-[0.4em] uppercase font-bold">
+<span class="w-2 h-2 bg-primary animate-pulse"></span>
+            Energy Infrastructure HQ
+        </div>
+<h1 class="text-7xl md:text-[10rem] font-headline font-black tracking-tighter uppercase leading-[0.85] mb-8 text-on-background">
+            Powering <br/><span class="text-primary-container">Sudan’s</span> <br/>Potential.
+        </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed mb-10 tracking-tight">
+            A Premier Energy Firm in Sudan. Engineering reliability into every watt with world-class industrial solar technology.
+        </p>
+<div class="flex gap-6">
+<button class="bg-primary-container text-on-primary-container px-12 py-5 font-headline font-bold uppercase tracking-widest text-lg clipped-corner hover:scale-105 transition-transform neon-glow-red">
+                INQUIRE NOW
+            </button>
+<button class="border border-outline/30 text-on-surface px-12 py-5 font-headline font-bold uppercase tracking-widest text-lg hover:bg-surface-bright transition-colors">
+                VIEW PROJECTS
+            </button>
+</div>
+</div>
+</section>
+<!-- Stats Bar -->
+<div class="w-full bg-surface-container-lowest py-10 overflow-hidden relative">
+<div class="flex whitespace-nowrap gap-20 items-center justify-around px-10">
+<div class="flex flex-col">
+<span class="text-primary text-5xl font-headline font-black">99.9%</span>
+<span class="text-[10px] tracking-[0.3em] text-on-surface-variant uppercase font-bold">Grid Reliability</span>
+</div>
+<div class="flex flex-col">
+<span class="text-tertiary text-5xl font-headline font-black">500k+</span>
+<span class="text-[10px] tracking-[0.3em] text-on-surface-variant uppercase font-bold">Panels Installed</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white text-5xl font-headline font-black">25+</span>
+<span class="text-[10px] tracking-[0.3em] text-on-surface-variant uppercase font-bold">Years of Expertise</span>
+</div>
+<div class="flex flex-col">
+<span class="text-primary-container text-5xl font-headline font-black">KRT</span>
+<span class="text-[10px] tracking-[0.3em] text-on-surface-variant uppercase font-bold">Operational HQ</span>
+</div>
+</div>
+</div>
+<!-- Our Vision Section -->
+<section class="py-32 px-10 bg-surface-container-low flex flex-col md:flex-row gap-20 items-center">
+<div class="w-full md:w-1/2 relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary-container/10 blur-[60px]"></div>
+<img alt="Worker installing electrical components" class="w-full h-[600px] object-cover grayscale brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8dG7wMhQ2BoTlFU60p0hiPctxJ4d3f5_bPPxW4bQhGCePSiVakE6CKTa3eaPbz9jR6MOHS6ArdGlMCSGQqEpaUn6v-vnhMiTgkIZF4fn3e0h7TIRhje0hslTmosgBWrPEOpwPICQBsjZIolEDX_0lk5oJDz18QtmqWBStpWr7QeUJOickx85GmvEvLcZmc-TgQr43cub9JRM3uibeSyR5RFbq4Hxi7A2XeiyCJQ37YnzsgvT5ck9RmtT1jP1KlcCBeOTrmwxIOM_m"/>
+<div class="absolute bottom-0 left-0 bg-primary-container p-8 clipped-corner max-w-xs translate-y-12 md:translate-x-12 neon-glow-red">
+<p class="font-headline font-bold text-2xl uppercase leading-tight text-on-primary-container">Building the Grid of Sudan's Future.</p>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-tertiary font-headline font-bold uppercase tracking-[0.4em] text-xs">Our Vision</span>
+<h2 class="text-6xl font-headline font-black uppercase tracking-tighter mt-6 mb-10 leading-[0.9]">POWERING SUDAN’S SUSTAINABLE RENAISSANCE</h2>
+<div class="space-y-6 text-on-surface-variant text-lg max-w-xl">
+<p>At TAQA ELECTRIC, we don't just supply power; we architect growth. Our vision is rooted in Sudan's vast potential for energy autonomy. We are bridging the gap between traditional energy limitations and a clean-tech future.</p>
+<p>By integrating world-class Jinko Solar technology with specialized industrial expertise, we provide the reliable backbone for the nation's agricultural, residential, and industrial evolution. From the fields to the factory floor, we deliver performance you can trust.</p>
+</div>
+<div class="mt-12 flex gap-12">
+<div>
+<h4 class="text-primary font-headline font-bold text-4xl">150+</h4>
+<p class="text-[10px] tracking-widest uppercase text-on-surface-variant font-bold mt-2">Projects Completed</p>
+</div>
+<div class="w-px h-12 bg-outline-variant/30"></div>
+<div>
+<h4 class="text-primary font-headline font-bold text-4xl">0.0%</h4>
+<p class="text-[10px] tracking-widest uppercase text-on-surface-variant font-bold mt-2">Failure Rate</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section class="py-32 px-10 bg-background relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full blueprint-grid opacity-10"></div>
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row-reverse gap-20 items-center relative z-10">
+<div class="w-full md:w-1/2 relative">
+<img alt="Engineering precision and technical facility" class="w-full h-[700px] object-cover grayscale brightness-75 border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeI1qS0D7u_p1K4G2M-Kj6C2n9l8T_XmR2Y-R6T2x_A5W0D_P5N0K2L-Q9S8T7U6V5W4X3Y2Z1A0B9C8D7E6F5G4H3I2J1K0L9M8N7O6P5Q4R3S2T1U0V9W8X7Y6Z5A4B3C2D1"/>
+<div class="absolute -bottom-8 -left-8 bg-surface-container p-8 border border-outline-variant/20 max-w-xs shadow-2xl">
+<span class="material-symbols-outlined text-primary-container text-5xl mb-4 block">engineering</span>
+<p class="text-[10px] font-bold tracking-[0.4em] text-on-surface-variant uppercase">Technical Division</p>
+<p class="text-white font-headline font-bold text-xl uppercase mt-2">Certified Industrial Experts</p>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-primary font-headline font-bold uppercase tracking-[0.4em] text-xs">A DECADE OF INDUSTRIAL EXCELLENCE</span>
+<h2 class="text-6xl md:text-7xl font-headline font-black uppercase tracking-tighter mt-6 mb-10 leading-[0.9]">ENGINEERING <br/>SUDAN'S FUTURE</h2>
+<div class="space-y-6 text-on-surface-variant text-lg max-w-xl mb-12">
+<p>Founded on the principles of reliability and technical precision, TAQA ELECTRIC has grown into Sudan's premier energy engineering firm. Our journey began with a simple mission: to provide the hardware and expertise necessary for national progress. Today, we stand as the bridge between global innovation and local execution.</p>
+<p>We don't just supply components; we design ecosystems. Our engineers specialize in high-capacity industrial solar grids, robust residential systems, and specialized agricultural solutions that withstand the unique challenges of the Sahara. Every watt we manage is a testament to our commitment to Sudan’s sustainable transformation.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-outline-variant/20 pt-12">
+<div class="space-y-2">
+<h5 class="text-white font-headline font-bold text-sm tracking-widest uppercase">TECHNICAL PRECISION</h5>
+<p class="text-on-surface-variant text-xs leading-relaxed">Engineering-grade hardware from global leaders like Jinko Solar and INVT.</p>
+</div>
+<div class="space-y-2">
+<h5 class="text-white font-headline font-bold text-sm tracking-widest uppercase">LOCAL EXPERTISE</h5>
+<p class="text-on-surface-variant text-xs leading-relaxed">Deep understanding of Sudan's environmental and logistical landscape.</p>
+</div>
+<div class="space-y-2">
+<h5 class="text-white font-headline font-bold text-sm tracking-widest uppercase">END-TO-END SOLUTIONS</h5>
+<p class="text-on-surface-variant text-xs leading-relaxed">From initial audit and design to deployment and technical support.</p>
+</div>
+<div class="space-y-2">
+<h5 class="text-white font-headline font-bold text-sm tracking-widest uppercase">SUSTAINABLE IMPACT</h5>
+<p class="text-on-surface-variant text-xs leading-relaxed">Reducing diesel reliance and powering a greener future for Sudanese industry.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 px-10 bg-background relative circuit-trace">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div class="max-w-2xl">
+<span class="text-tertiary font-headline text-sm tracking-[0.5em] uppercase font-bold">Precision Corporate Solutions</span>
+<h2 class="text-6xl md:text-7xl font-headline font-black uppercase tracking-tighter mt-4">Service Modules</h2>
+</div>
+<p class="text-on-surface-variant max-w-sm text-sm border-l-2 border-primary-container pl-6 leading-relaxed">
+            Engineering-grade power frameworks for Sudanese industry, agriculture, and high-end residential estates.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+<!-- Intelligent Home -->
+<div class="group relative bg-surface-container p-14 min-h-[550px] flex flex-col justify-between transition-all duration-300 hover:bg-surface-container-high">
+<div class="absolute top-0 right-0 p-10 opacity-10 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-tertiary text-7xl">home_work</span>
+</div>
+<div class="relative z-10">
+<span class="text-[10px] font-bold tracking-[0.4em] text-on-surface-variant uppercase mb-4 block">Module 01</span>
+<h3 class="text-4xl font-headline font-bold uppercase mt-2 leading-none">Intelligent<br/>Home Energy</h3>
+</div>
+<div class="relative z-10">
+<p class="text-on-surface-variant mb-10 leading-relaxed text-sm">We combine Jinko Solar efficiency with MaxPower Hybrid Inverters and Go Green Batteries to ensure 24/7 cooling and connectivity with Sudan’s most reliable residential setup.</p>
+<button class="text-tertiary font-headline font-bold text-xs tracking-widest uppercase flex items-center gap-2 group-hover:gap-4 transition-all">
+                    DEPLOY SYSTEM <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-tertiary/5 blur-[60px] group-hover:bg-tertiary/10 transition-all duration-500"></div>
+</div>
+<!-- Agricultural -->
+<div class="group relative bg-surface-container p-14 min-h-[550px] flex flex-col justify-between transition-all duration-300 hover:bg-surface-container-high border-x border-outline-variant/5">
+<div class="absolute top-0 right-0 p-10 opacity-10 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container text-7xl">agriculture</span>
+</div>
+<div class="relative z-10">
+<span class="text-[10px] font-bold tracking-[0.4em] text-on-surface-variant uppercase mb-4 block">Module 02</span>
+<h3 class="text-4xl font-headline font-bold uppercase mt-2 leading-none">Solar Pumping<br/>&amp; Irrigation</h3>
+</div>
+<div class="relative z-10">
+<p class="text-on-surface-variant mb-10 leading-relaxed text-sm">Transform your farm with INVT VFD controllers. We pair them with rugged Jinko Solar panels to provide reliable water flow without the cost of diesel. Built for the Sahara.</p>
+<button class="text-primary-container font-headline font-bold text-xs tracking-widest uppercase flex items-center gap-2 group-hover:gap-4 transition-all">
+                    VIEW SCHEMATICS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-primary-container/5 blur-[60px] group-hover:bg-primary-container/10 transition-all duration-500"></div>
+</div>
+<!-- Industrial -->
+<div class="group relative bg-surface-container p-14 min-h-[550px] flex flex-col justify-between transition-all duration-300 hover:bg-surface-container-high">
+<div class="absolute top-0 right-0 p-10 opacity-10 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-7xl">factory</span>
+</div>
+<div class="relative z-10">
+<span class="text-[10px] font-bold tracking-[0.4em] text-on-surface-variant uppercase mb-4 block">Module 03</span>
+<h3 class="text-4xl font-headline font-bold uppercase mt-2 leading-none">High-Scale<br/>Industrial Solar</h3>
+</div>
+<div class="relative z-10">
+<p class="text-on-surface-variant mb-10 leading-relaxed text-sm">Engineering-grade power for factories. Using Jinko N-Type technology, we build high-capacity grids that slash operational costs and secure the energy future for Sudanese industry.</p>
+<button class="text-white font-headline font-bold text-xs tracking-widest uppercase flex items-center gap-2 group-hover:gap-4 transition-all">
+                    CONSULT ENGINEERS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-white/5 blur-[60px] group-hover:bg-white/10 transition-all duration-500"></div>
+</div>
+</div>
+</section>
+<!-- Machined Performance (Hardware Stack) -->
+<section class="py-32 px-10 bg-background overflow-hidden blueprint-grid">
+<div class="text-center mb-24">
+<h2 class="text-6xl font-headline font-black uppercase tracking-tighter">Machined Performance</h2>
+<p class="text-on-surface-variant tracking-[0.3em] uppercase text-xs mt-4 font-bold">Authorized Equipment &amp; Components. Engineered for the Sahara.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<!-- Jinko Panel -->
+<div class="group">
+<div class="bg-surface-container h-[400px] flex items-center justify-center p-10 transition-all duration-500 group-hover:scale-105 relative overflow-hidden">
+<img alt="Jinko N-Type Solar Panel" class="w-full h-auto drop-shadow-2xl grayscale brightness-110 group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl7F-3SfRUkqx399Dtlv307C5Rg9dOM2L_M1icp5nDxfPJmJ0ZyyM90gsh6uR_WBDIWOiI_-hkc37et_cX6ZWUpCx8ZNBa4ZrpgDrYfLUPer4jUg6456hus37UKvQJIYctokeJFABnJnLtKvEotdGaURASCj6fWy6r5DQYXYhvEaiUt4ZMAZo2tXWYJw7_TOov97IGLyyUN-g0oKcZDyBEwxHuRgMTyfzJ2yoKw5msAWpSET_NuSX2ZgbJMamatsK4CAWZhj2XoQ7-"/>
+<div class="absolute inset-0 bg-primary-container/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h4 class="font-headline font-bold uppercase mt-6 text-xl text-center">Jinko N-Type Panels</h4>
+<p class="text-center text-[10px] tracking-widest text-on-surface-variant uppercase font-bold mt-2">Bifacial Efficiency</p>
+</div>
+<!-- MaxPower Inverter -->
+<div class="group">
+<div class="bg-surface-container h-[400px] flex items-center justify-center p-10 transition-all duration-500 group-hover:scale-105 relative overflow-hidden">
+<img alt="MaxPower Hybrid Inverter" class="w-full h-auto drop-shadow-2xl grayscale brightness-110 group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqBDmaRkAFFFRNm6Phzh3i5lxChq3JQo_j2nd912k6A3iY7g3XNFx_ddBiGwf0M78V_2SbRbRHpd0h1ef4xQiBnI5ulEcpdtwnkTqZBahjwxRVZ4biwpRLSjKHOf74d--2rUY57b4QpSteYgB-dbp1eRbXHiCIBMv5Ko97J1gIs_dF39uGu5dRcnJyVvS4ybtj7Fpo4j2j_U7UNApz5p4aSejSGCj8u6YNdW2D0yL2QYeeqYhhCtkhQi779-_4FrtjMqty-I3UwiHy"/>
+<div class="absolute inset-0 bg-primary-container/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h4 class="font-headline font-bold uppercase mt-6 text-xl text-center">MaxPower Hybrid</h4>
+<p class="text-center text-[10px] tracking-widest text-on-surface-variant uppercase font-bold mt-2">Smart Management</p>
+</div>
+<!-- Go Green Battery -->
+<div class="group">
+<div class="bg-surface-container h-[400px] flex items-center justify-center p-10 transition-all duration-500 group-hover:scale-105 relative overflow-hidden">
+<img alt="Go Green Lithium Storage" class="w-full h-auto drop-shadow-2xl grayscale brightness-110 group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1fBjEvBLW-D16Z7NHCKNvNQDL9R8hXCfly_FITILJsD7-CsEHkQH6rbKCZv6Vq-aUeaOnGxmBnOAWspzMuJmb3qF2M0wsLomCeHI9fzeW5oZreaRFLMQWn1vKNrxWxLSAUfZB86qDUc7if1MmE8znPJMmVoVDXQ-_8F36DCeD_rhL80CfuKoo4QL0IdHK_VO_u2Q52BNSoxTg5Xh4zWj_ULWSbcU5-pp2zBqELhWhdAIjc60zPVV57VQ4BxACo67Wzkd5Vg_HiKMn"/>
+<div class="absolute inset-0 bg-primary-container/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h4 class="font-headline font-bold uppercase mt-6 text-xl text-center">Go Green Lithium</h4>
+<p class="text-center text-[10px] tracking-widest text-on-surface-variant uppercase font-bold mt-2">Long-Cycle Storage</p>
+</div>
+<!-- INVT Solar VFD -->
+<div class="group">
+<div class="bg-surface-container h-[400px] flex items-center justify-center p-10 transition-all duration-500 group-hover:scale-105 relative overflow-hidden">
+<img alt="INVT Solar VFD" class="w-full h-auto drop-shadow-2xl grayscale brightness-110 group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfQHB-hMsKISuL9LJP_s4N9EDzEbHqM5webIhpZabQ2lIbe8f3rYWG7MEYkW3gSCeTWZdzmForOPuFVjcSQ7uViC5phLo18VRD8cHuGALOq1VKE1egpqzEACEQSFxH74d3AtDOpKss9MJvlp60dwSb6oeZAuqwN591y0y7ebHGtUDoQ8VIOTGcVfMgZ9mlghYzTaf2TSwib2f-O4KGJ2zHwSp-XeU67IR4AFdNCw0nC9isWm1DR1yZGOpLaPJkHVW9TKSc-a0wwHBU"/>
+<div class="absolute inset-0 bg-primary-container/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h4 class="font-headline font-bold uppercase mt-6 text-xl text-center">INVT Solar VFD</h4>
+<p class="text-center text-[10px] tracking-widest text-on-surface-variant uppercase font-bold mt-2">Irrigation Control</p>
+</div>
+</div>
+</section>
+<!-- Project Case Study -->
+<section class="py-32 px-10 bg-surface-container-low flex flex-col md:flex-row gap-20 items-center overflow-hidden">
+<div class="w-full md:w-1/2 relative group">
+<div class="absolute -top-10 -left-10 w-64 h-64 bg-primary-container/20 blur-[80px]"></div>
+<img alt="Northern Sudan 2MW Industrial Solar Grid" class="w-full h-[650px] object-cover grayscale brightness-75 transition-all duration-700 group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZLuqDJf2UGFyOQbhC5Qa5ic0-oN4rkRS6UipdiozbM7jXwkQ77LdD6xgPFkb2iHoEB70TK-9KCybMFpcfw_4yrikLHTZBzHXOBCtRzQGDzLhteJoKTo2yBwrR43L3eCnvYUEVvhxMDDjhuUbziAPqxxGq04RCEtztGJbUP3ULZzLUY_S8euxQZiCCs1Q44q_2EWjzjm8TQjl6OUiX4V1Ixq2Pz1CeTVzbKNLLq0ktcLXxm8evoUiqR8OJZL4Gl9mRx869U_h9KsFT"/>
+<div class="absolute bottom-0 left-0 bg-primary-container p-10 clipped-corner max-w-xs translate-y-6 md:translate-x-12 neon-glow-red">
+<p class="font-headline font-bold text-3xl uppercase leading-tight text-on-primary-container">ENGINEERING LARGE-SCALE IMPACT.</p>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-tertiary font-headline font-bold uppercase tracking-[0.4em] text-xs">Featured Project</span>
+<h2 class="text-7xl font-headline font-black uppercase tracking-tighter mt-6 mb-10 leading-[0.9]">Northern Sudan <br/>2MW Grid</h2>
+<div class="space-y-6 text-on-surface-variant text-lg max-w-xl">
+<p>Our recent project in Northern Sudan features a 2MW industrial grid utilizing Jinko N-Type panels and INVT industrial controllers.</p>
+<p>We reduced diesel reliance by 85% for this agricultural processing hub, providing stabilized energy for critical manufacturing operations in high-heat environments.</p>
+</div>
+<ul class="mt-10 space-y-4">
+<li class="flex items-center gap-4 text-xs font-bold font-headline uppercase tracking-widest">
+<span class="w-4 h-[2px] bg-primary"></span> 2.4MW Peak Output Capability
+            </li>
+<li class="flex items-center gap-4 text-xs font-bold font-headline uppercase tracking-widest">
+<span class="w-4 h-[2px] bg-primary"></span> Remote Performance Telemetry
+            </li>
+<li class="flex items-center gap-4 text-xs font-bold font-headline uppercase tracking-widest">
+<span class="w-4 h-[2px] bg-primary"></span> Hybrid Grid Stabilization Tech
+            </li>
+</ul>
+<div class="mt-12">
+<button class="bg-surface-container-high border border-outline-variant/30 text-on-surface px-12 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:bg-surface-bright transition-all">
+                VIEW TECHNICAL CASE STUDY
+            </button>
+</div>
+</div>
+</section>
+<!-- Brand Ecosystem -->
+<section class="py-24 px-10 bg-background">
+<div class="border-t border-outline-variant/10 pt-24">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-12 opacity-30 hover:opacity-100 transition-opacity grayscale items-center text-center">
+<div class="font-headline font-bold tracking-widest uppercase text-2xl">JINKO SOLAR</div>
+<div class="font-headline font-bold tracking-widest uppercase text-2xl">MAXPOWER</div>
+<div class="font-headline font-bold tracking-widest uppercase text-2xl">INVT</div>
+<div class="font-headline font-bold tracking-widest uppercase text-2xl">GO GREEN</div>
+<div class="font-headline font-bold tracking-widest uppercase text-2xl">SIEMENS</div>
+</div>
+</div>
+</section>
+<!-- Contact Us Section -->
+<section class="py-32 px-10 bg-surface-container-low relative overflow-hidden border-t border-outline-variant/10">
+<div class="absolute inset-0 blueprint-grid opacity-10"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
+<!-- Form Side -->
+<div class="lg:col-span-7">
+<span class="text-primary font-headline font-bold uppercase tracking-[0.4em] text-xs">Partner with TAQA</span>
+<h2 class="text-6xl font-headline font-black uppercase tracking-tighter mt-6 mb-8 leading-tight">INITIATE TECHNICAL <br/>CONSULTATION</h2>
+<p class="text-on-surface-variant text-lg max-w-xl mb-12">Start your journey towards energy autonomy. Our engineering division is ready to architect a sustainable framework tailored to your specific industrial or residential requirements.</p>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-white/70 ml-1">Full Name</label>
+<input class="w-full bg-surface-container border-none focus:ring-1 focus:ring-primary-container p-4 text-white font-body" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-white/70 ml-1">Company Name</label>
+<input class="w-full bg-surface-container border-none focus:ring-1 focus:ring-primary-container p-4 text-white font-body" placeholder="Acme Corp" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-white/70 ml-1">Service Required</label>
+<select class="w-full bg-surface-container border-none focus:ring-1 focus:ring-primary-container p-4 text-white font-body appearance-none">
+<option>Solar Solutions</option>
+<option>Industrial Grids</option>
+<option>Agricultural Pumping</option>
+<option>Technical Consultancy</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-white/70 ml-1">Technical Brief / Message</label>
+<textarea class="w-full bg-surface-container border-none focus:ring-1 focus:ring-primary-container p-4 text-white font-body min-h-[150px]" placeholder="Describe your power requirements..."></textarea>
+</div>
+<button class="bg-primary-container text-on-primary-container px-12 py-5 font-headline font-bold uppercase tracking-widest text-lg clipped-corner hover:scale-[1.02] transition-transform neon-glow-red w-full md:w-auto">
+                        SUBMIT REQUEST
+                    </button>
+</form>
+</div>
+<!-- Info Side -->
+<div class="lg:col-span-5 flex flex-col justify-center">
+<div class="bg-surface-container p-12 space-y-12 border border-outline-variant/10">
+<div>
+<h4 class="text-white font-headline font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-3">
+<span class="w-8 h-px bg-primary"></span> Direct Technical HQ
+                        </h4>
+<div class="space-y-8">
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary-container text-3xl">phone_in_talk</span>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60 mb-1">Phone Line</p>
+<p class="text-2xl font-headline font-bold text-white tracking-tight">+249 912 345 678</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary-container text-3xl">alternate_email</span>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60 mb-1">Email Terminal</p>
+<p class="text-2xl font-headline font-bold text-white tracking-tight lowercase">tech@taqa-electric.com</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary-container text-3xl">location_on</span>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60 mb-1">Operational Base</p>
+<p class="text-2xl font-headline font-bold text-white tracking-tight uppercase">Al-Amarat, Khartoum</p>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-12 border-t border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+<span class="text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface-variant">Engineers Online</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed italic">Our technical staff is currently monitoring grid performance. Consultation responses typical within 4 operational hours.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer CTA -->
+<section class="py-40 px-10 bg-primary-container relative overflow-hidden group">
+<div class="absolute inset-0 circuit-trace opacity-10"></div>
+<div class="relative z-10 text-center flex flex-col items-center">
+<h2 class="text-7xl md:text-[9rem] font-headline font-black uppercase tracking-tighter text-on-primary-container mb-10 leading-none">BUILD THE FUTURE</h2>
+<p class="text-on-primary-container/90 text-2xl font-medium mb-16 max-w-3xl tracking-tight">Connect with our engineering division for a comprehensive technical roadmap for your next industrial project in Sudan.</p>
+<button class="bg-white text-primary-container px-16 py-8 font-headline font-bold uppercase tracking-[0.2em] text-xl hover:scale-105 transition-transform clipped-corner shadow-2xl">
+            REQUEST TECHNICAL CONSULTATION
+        </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] w-full py-20 px-10 border-t border-outline-variant/5">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-7xl mx-auto">
+<div class="space-y-8">
+<div class="flex items-center gap-4">
+<img alt="TAQA" class="h-8 w-auto grayscale" src="https://lh3.googleusercontent.com/aida/ADBb0uhBzuqWSAtw6YC9jxPrQ-TA2SL_5oSXaNyUhqzO32hdNcN7HzIw2bjGU3IByYTaAsGDxvskTd51BlktNrtwBe6V8L4Fy7psaM_2tj3Uihe8jW_haAHBSKHwtvHp1xto8N5iFc1iPoMXtz9gdCrorqJj4hYuM68Ek1UPlDquKafnjUK9eN44VJJWMcl_49DjyZzxwotAp7J0GPY07Oi0Behz7JewXuCTlUfqCLs7g5V0aGsoL2z4PiP8kD4vLKTfSsbN2vWWUIOZ3A"/>
+<span class="text-xl font-bold text-white uppercase tracking-tighter font-headline">TAQA ELECTRIC</span>
+</div>
+<p class="text-on-surface-variant/60 text-sm leading-relaxed max-w-xs">Sudan's leading solar engineering firm. Deploying reliable energy infrastructure for residential, agricultural, and industrial sectors.</p>
+<div class="text-primary font-bold font-headline uppercase tracking-widest text-[10px]">Sudan HQ • Al-Amarat, Khartoum</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<h5 class="text-white font-headline font-bold uppercase tracking-widest text-xs mb-2">Systems</h5>
+<a class="text-gray-500 hover:text-primary transition-colors text-xs uppercase tracking-widest" href="#">Dashboard</a>
+<a class="text-gray-500 hover:text-primary transition-colors text-xs uppercase tracking-widest" href="#">Protocols</a>
+<a class="text-gray-500 hover:text-primary transition-colors text-xs uppercase tracking-widest" href="#">Hardware</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-white font-headline font-bold uppercase tracking-widest text-xs mb-2">Support</h5>
+<a class="text-gray-500 hover:text-primary transition-colors text-xs uppercase tracking-widest" href="#">Tech Ops</a>
+<a class="text-gray-500 hover:text-primary transition-colors text-xs uppercase tracking-widest" href="#">Case Studies</a>
+<a class="text-gray-500 hover:text-primary transition-colors text-xs uppercase tracking-widest" href="#">Legal</a>
+</div>
+</div>
+<div class="space-y-8">
+<h5 class="text-white font-headline font-bold uppercase tracking-widest text-xs mb-2">Contact Tech Ops</h5>
+<div class="bg-surface-container-low p-6 border border-outline-variant/10">
+<div class="text-[10px] text-gray-500 uppercase font-bold tracking-[0.2em] mb-2">Direct Technical Line</div>
+<div class="text-primary font-bold font-headline text-2xl">+249 912 345 678</div>
+</div>
+<div class="text-[10px] text-gray-600 uppercase font-bold tracking-widest">
+                © 2024 TAQA ELECTRIC | INDUSTRIAL PRECISION | SUDAN HQ
+            </div>
+</div>
+</div>
+</footer>
+</body></html>

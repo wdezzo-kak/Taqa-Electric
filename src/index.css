@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-on-surface;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  /* Clipped corner for industrial aesthetic */
+  .clipped-corner {
+    clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 0 100%);
+  }
+  
+  /* Blueprint grid pattern */
+  .blueprint-grid {
+    background-image: radial-gradient(circle, #393939 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  
+  /* Circuit trace pattern */
+  .circuit-trace {
+    background-image: linear-gradient(90deg, rgba(211,47,47,0.1) 1px, transparent 1px),
+                      linear-gradient(rgba(211,47,47,0.1) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  
+  /* Neon glow effect */
+  .neon-glow-red {
+    box-shadow: 0 0 20px rgba(211,47,47,0.3);
+  }
+  
+  /* Text gradient */
+  .text-gradient-red {
+    background: linear-gradient(135deg, #ffb3ac 0%, #d32f2f 50%, #930010 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Diagonal stripe pattern */
+  .diagonal-stripes {
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(211,47,47,0.03) 10px,
+      rgba(211,47,47,0.03) 20px
+    );
+  }
+
+  /* Hamburger menu */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 60;
+  }
+  
+  .hamburger span {
+    width: 22px;
+    height: 2px;
+    background: #e5e2e1;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Mobile menu overlay */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(19, 19, 19, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 55;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .mobile-menu.active {
+    transform: translateX(0);
+  }
+  
+  .mobile-menu a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #e5e2e1;
+    transition: color 0.3s ease;
+  }
+  
+  .mobile-menu a:hover {
+    color: #d32f2f;
+  }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #131313;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #353534;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d32f2f;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #d32f2f;
+  color: white;
+}
+
+/* Material Symbols Outlined base */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
