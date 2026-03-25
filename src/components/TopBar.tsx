@@ -36,14 +36,14 @@ export default function TopBar({ lang, setLang, t }: TopBarProps) {
       <div className="flex items-center gap-3 md:gap-4">
         <button 
           onClick={() => setLang('ar')}
-          className={`hover:text-primary transition-colors ${lang === 'ar' ? 'text-primary' : 'text-white/70'}`}
+          className={`hover:text-primary transition-colors ${lang === 'ar' ? 'text-primary' : 'text-on-surface/50'}`}
         >
           AR
         </button>
         <span className="opacity-30">|</span>
         <button 
           onClick={() => setLang('en')}
-          className={`hover:text-primary transition-colors ${lang === 'en' ? 'text-primary' : 'text-white/70'}`}
+          className={`hover:text-primary transition-colors ${lang === 'en' ? 'text-primary' : 'text-on-surface/50'}`}
         >
           EN
         </button>

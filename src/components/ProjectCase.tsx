@@ -5,11 +5,14 @@ interface ProjectCaseProps {
     projectLabel: string
     projectQuote: string
     projectTitle: string
+    projectSubtitle?: string
+    projectDate: string
     projectDesc: string
-    projectDesc2: string
+    projectCredit?: string
     projectFeat1: string
     projectFeat2: string
     projectFeat3: string
+    projectFeat4?: string
     projectBtn: string
   }
 }
@@ -20,69 +23,143 @@ export default function ProjectCase({ t }: ProjectCaseProps) {
     t.projectFeat2,
     t.projectFeat3,
   ]
+  
+  if (t.projectFeat4) {
+    features.push(t.projectFeat4)
+  }
+
+  const projectImages = [
+    {
+      src: '/assets/images/sileit-ventilation-fan.webp',
+      alt: 'Sileit Project Ventilation System',
+    },
+    {
+      src: '/assets/images/sileit-solar-panels.webp',
+      alt: 'Sileit Project Solar Panels Installation',
+    },
+    {
+      src: '/assets/images/sileit-team-installation.webp',
+      alt: 'Sileit Project Technical Team',
+    },
+  ]
 
   return (
-    <section className="py-8 md:py-16 px-4 md:px-10 bg-surface-container-low flex flex-col md:flex-row gap-8 md:gap-12 items-center overflow-hidden">
-      {/* Image side */}
-      <Animation direction="left" delay={100} className="w-full md:w-1/2 relative group">
-        <div className="absolute -top-10 -left-10 w-40 lg:w-64 h-40 lg:h-64 bg-primary-container/20 blur-[60px] lg:blur-[80px]"></div>
-        <div className="relative overflow-hidden">
-          <img 
-            alt="Northern Sudan 2MW Industrial Solar Grid" 
-            className="w-full h-[300px] md:h-[400px] lg:h-[550px] object-cover grayscale brightness-75 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZLuqDJf2UGFyOQbhC5Qa5ic0-oN4rkRS6UipdiozbM7jXwkQ77LdD6xgPFkb2iHoEB70TK-9KCybMFpcfw_4yrikLHTZBzHXOBCtRzQGDzLhteJoKTo2yBwrR43L3eCnvYUEVvhxMDDjhuUbziAPqxxGq04RCEtztGJbUP3ULZzLUY_S8euxQZiCCs1Q44q_2EWjzjm8TQjl6OUiX4V1Ixq2Pz1CeTVzbKNLLq0ktcLXxm8evoUiqR8OJZL4Gl9mRx869U_h9KsFT"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-container/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        </div>
-        <Animation delay={400} direction="up">
-          <div className="absolute bottom-0 left-0 bg-primary-container p-4 md:p-6 lg:p-8 xl:p-10 clipped-corner translate-y-2 md:translate-y-4 lg:translate-y-6 md:translate-x-6 lg:translate-x-12 neon-glow-red hover:scale-105 transition-transform duration-300">
-            <p className="font-headline font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase leading-tight text-on-primary-container">
-              {t.projectQuote}
-            </p>
+    <section className="py-8 md:py-16 px-4 md:px-10 bg-surface-container-low flex flex-col md:flex-row gap-8 md:gap-10 items-start overflow-hidden relative">
+      {/* Background accents */}
+      <div className="absolute -top-10 -left-10 w-40 md:w-64 h-40 md:h-64 bg-primary/20 blur-[60px] md:blur-[80px]"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-tertiary/5 rounded-full blur-[150px] pointer-events-none"></div>
+      
+      {/* Image side - 50% width on md+ */}
+      <Animation direction="left" delay={100} className="w-full md:w-6/12 relative group">
+        <div className="absolute -top-10 -left-10 w-40 md:w-64 h-40 md:h-64 bg-primary/20 blur-[60px] md:blur-[80px]"></div>
+        
+        {/* Grid: 2 columns, 2 rows - same height for md and lg */}
+        <div className="grid grid-cols-2 grid-rows-2 gap-3 md:gap-4 h-[350px] md:h-[550px]">
+          {/* IMG 2 - Solar Panels (Landscape - Top, full width) */}
+          <div className="col-span-2 row-span-1 relative group/img2 overflow-hidden border border-outline-variant/20 shadow-2xl">
+            <img 
+              alt={projectImages[1].alt}
+              className="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 group-hover/img2:grayscale-0 group-hover/img2:brightness-100" 
+              src={projectImages[1].src}
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover/img2:opacity-100 transition-opacity duration-500"></div>
           </div>
-        </Animation>
+          
+          {/* IMG 1 - Ventilation Fan (Square - Bottom Left) */}
+          <div className="col-span-1 row-span-1 relative group/img1 overflow-hidden border border-outline-variant/20 shadow-xl">
+            <img 
+              alt={projectImages[0].alt}
+              className="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 group-hover/img1:grayscale-0 group-hover/img1:brightness-100" 
+              src={projectImages[0].src}
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover/img1:opacity-100 transition-opacity duration-500"></div>
+          </div>
+          
+          {/* IMG 3 - Team Installation (Square - Bottom Right) */}
+          <div className="col-span-1 row-span-1 relative group/img3 overflow-hidden border border-outline-variant/20 shadow-xl">
+            <img 
+              alt={projectImages[2].alt}
+              className="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 group-hover/img3:grayscale-0 group-hover/img3:brightness-100" 
+              src={projectImages[2].src}
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover/img3:opacity-100 transition-opacity duration-500"></div>
+          </div>
+        </div>
+        
+        {/* Quote badge - overlaid on bottom of image grid */}
+        <div className="absolute -bottom-4 left-0 bg-primary p-3 md:p-4 clipped-corner neon-glow-red z-20 max-w-[180px] md:max-w-[220px]">
+          <p className="font-headline font-bold text-xs md:text-sm uppercase leading-tight text-on-primary">
+            {t.projectQuote}
+          </p>
+        </div>
       </Animation>
 
-      {/* Content side */}
-      <div className="w-full md:w-1/2">
+      {/* Content side - 50% width on md+ */}
+      <div className="w-full md:w-6/12 relative z-10">
+        {/* Label */}
         <Animation delay={200} direction="right">
-          <span className="text-tertiary font-headline font-bold uppercase tracking-[0.4em] text-xs">
+          <span className="text-tertiary font-headline font-bold uppercase tracking-[0.5em] text-xs md:text-sm">
             {t.projectLabel}
           </span>
         </Animation>
         
+        {/* Title */}
         <Animation delay={300} direction="up">
-          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-headline font-black uppercase tracking-tighter mt-4 md:mt-6 mb-6 md:mb-8 leading-[0.95]">
+          <h2 className="text-2xl md:text-4xl font-headline font-bold uppercase tracking-tight mt-3 md:mt-4 mb-3 md:mb-4 leading-[0.95]">
             {t.projectTitle}
           </h2>
         </Animation>
+
+        {/* Subtitle */}
+        {t.projectSubtitle && (
+          <Animation delay={350} direction="up">
+            <h3 className="text-lg md:text-2xl font-headline font-bold uppercase tracking-tight text-primary mb-5 md:mb-6 leading-[1.1]">
+              {t.projectSubtitle}
+            </h3>
+          </Animation>
+        )}
         
+        {/* Date badge */}
         <Animation delay={400} direction="up">
-          <div className="space-y-4 md:space-y-6 text-on-surface-variant text-sm md:text-base lg:text-lg max-w-lg xl:max-w-xl">
-            <p>
-              {t.projectDesc}
-            </p>
-            <p>
-              {t.projectDesc2}
-            </p>
+          <div className="inline-block px-3 py-1 border border-primary/30 text-primary text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] mb-6 md:mb-8">
+            {t.projectDate}
           </div>
         </Animation>
         
-        <Animation delay={500} direction="up" className="mt-6 md:mt-8 lg:mt-10">
+        {/* Description */}
+        <Animation delay={500} direction="up">
+          <div className="space-y-4 md:space-y-5 text-on-surface-variant text-base max-w-xl font-light">
+            <p>
+              {t.projectDesc}
+            </p>
+            {t.projectCredit && (
+              <p className="text-sm italic opacity-80 border-l-2 border-primary pl-4 md:pl-6">
+                {t.projectCredit}
+              </p>
+            )}
+          </div>
+        </Animation>
+        
+        {/* Features */}
+        <Animation delay={600} direction="up" className="mt-8 md:mt-10">
           <ul className="space-y-3 md:space-y-4">
             {features.map((feature, index) => (
-              <li key={index} className="flex items-center gap-3 md:gap-4 text-xs md:text-sm font-bold font-headline uppercase tracking-widest group cursor-pointer">
-                <span className="w-4 md:w-6 h-[2px] bg-primary group-hover:w-8 md:hover:w-10 transition-all duration-300"></span> 
+              <li key={index} className="flex items-center gap-3 md:gap-4 text-xs md:text-sm font-bold font-headline uppercase tracking-[0.35em] group cursor-pointer">
+                <span className="w-5 md:w-6 h-[2px] bg-primary group-hover:w-7 md:group-hover:w-9 transition-all duration-300"></span> 
                 <span className="group-hover:text-on-surface transition-colors duration-300">{feature}</span>
               </li>
             ))}
           </ul>
         </Animation>
         
-        <Animation delay={600} direction="up" className="mt-8 md:mt-10 lg:mt-12">
-          <button className="group bg-surface-container-high border border-outline-variant/30 text-on-surface px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 font-headline font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-primary-container hover:border-primary-container transition-all duration-300 clipped-corner">
+        {/* Button */}
+        <Animation delay={700} direction="up" className="mt-10 md:mt-12">
+          <button className="group bg-surface-container-high border border-outline-variant/30 text-on-surface px-8 md:px-12 py-3 md:py-4 font-headline font-bold uppercase tracking-widest text-sm hover:bg-primary hover:border-primary hover:shadow-glow transition-all duration-300 clipped-corner flex items-center gap-2">
             <span className="relative z-10">{t.projectBtn}</span>
+            <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform duration-300">arrow_right_alt</span>
           </button>
         </Animation>
       </div>

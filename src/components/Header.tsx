@@ -22,7 +22,7 @@ export default function Header({ t }: HeaderProps) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30)
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -52,7 +52,13 @@ export default function Header({ t }: HeaderProps) {
     if (closeMenu) setMobileMenuOpen(false)
     const element = document.querySelector(href)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const headerOffset = 100
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
     }
   }
 
@@ -60,7 +66,13 @@ export default function Header({ t }: HeaderProps) {
     e.preventDefault()
     const element = document.querySelector('#contact')
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const headerOffset = 100
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
     }
   }
 
@@ -68,39 +80,41 @@ export default function Header({ t }: HeaderProps) {
     <>
       <nav 
         className={`fixed left-0 w-full z-50 transition-all duration-500 top-[32px] sm:top-[29px] ${scrolled 
-            ? 'bg-[#131313]/95 backdrop-blur-xl py-2 md:py-3 opacity-100 translate-y-0' 
+            ? 'bg-background/95 backdrop-blur-xl py-2 md:py-3 opacity-100 translate-y-0 border-b border-primary/10' 
             : 'bg-transparent py-0 opacity-0 -translate-y-full pointer-events-none'
         }`}
       >
-        <div className="flex justify-between items-center px-4 md:px-6 lg:px-10 border-b border-outline-variant/5">
+        <div className="flex justify-between items-center px-4 md:px-6 lg:px-10">
           <div className="flex items-center gap-2 md:gap-3">
             <img 
               alt="TAQA Electric Logo" 
-              className="h-6 md:h-7 lg:h-8 w-auto" 
-              src="/white-logo.png"
+              className="h-7 md:h-8 lg:h-9 w-auto" 
+              src="/assets/images/white-logo.png"
             />
-            <span className="text-sm md:text-base lg:text-xl font-black tracking-tighter text-[#d32f2f] uppercase font-rajdhani">
+            <span className="text-xs md:text-sm lg:text-lg font-bold tracking-tight text-primary uppercase font-label">
               {t.companyName}
             </span>
           </div>
-          <div className="hidden lg:flex gap-3 xl:gap-4 font-rajdhani tracking-tighter uppercase font-bold text-[14px] xl:text-[16px]">
+          <div className="hidden lg:flex gap-3 xl:gap-4 font-label tracking-tighter uppercase font-bold text-[14px] xl:text-[16px]">
             {navLinks.map((link) => (
               <a 
                 key={link.label}
-                className="text-white/70 hover:text-white transition-colors whitespace-nowrap" 
+                className="relative text-on-surface/70 hover:text-primary transition-colors duration-200 group whitespace-nowrap" 
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-200 group-hover:w-full"></span>
               </a>
             ))}
           </div>
           <div className="flex items-center gap-2 md:gap-4">
             <button 
               onClick={scrollToContact}
-              className="bg-primary-container text-on-primary-container font-rajdhani tracking-tighter uppercase font-bold text-[10px] md:text-xs px-3 md:px-4 py-1.5 md:py-2 clipped-corner hover:bg-primary transition-all duration-200"
+              className="group relative bg-primary text-on-primary font-label tracking-tighter uppercase font-bold text-[10px] md:text-xs px-3 md:px-4 py-1.5 md:py-2 clipped-corner hover:bg-primary-light hover:shadow-glow transition-all duration-200 btn-glow"
             >
               {t.navInitiate}
+              <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 clipped-corner transition-opacity"></span>
             </button>
             {/* Hamburger - shown on tablet 768-1024px */}
             <button 
@@ -116,32 +130,47 @@ export default function Header({ t }: HeaderProps) {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - Enhanced */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
         <button 
-          className="absolute top-5 right-5 text-white/70 hover:text-primary transition-colors"
+          className="absolute top-5 right-5 text-on-surface/70 hover:text-primary transition-colors p-2"
           onClick={() => setMobileMenuOpen(false)}
+          aria-label="Close menu"
         >
           <span className="material-symbols-outlined text-3xl">close</span>
         </button>
-        <div className="flex flex-col items-center gap-5">
-          {navLinks.map((link, index) => (
+        
+        {/* Animated logo in mobile menu */}
+        <div className="flex items-center gap-3 mb-8">
+          <img 
+            alt="TAQA Logo" 
+            className="h-10 w-auto" 
+            src="/assets/images/white-logo.png"
+          />
+          <span className="text-xl font-bold tracking-tight text-primary uppercase font-label">
+            {t.companyName}
+          </span>
+        </div>
+        
+        <div className="flex flex-col items-center gap-6">
+          {navLinks.map((link) => (
             <a 
               key={link.label}
               href={link.href}
-              className="text-xl font-headline font-bold uppercase tracking-widest hover:text-primary-container transition-colors"
-              style={{ animationDelay: `${index * 50}ms` }}
+              className="text-xl font-headline font-bold uppercase tracking-widest hover:text-primary transition-colors relative group"
               onClick={(e) => handleNavClick(e, link.href, true)}
             >
               {link.label}
+              <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </div>
         <button 
           onClick={(e) => { scrollToContact(e); setMobileMenuOpen(false); }}
-          className="mt-6 bg-primary-container text-on-primary-container px-8 py-3 font-headline font-bold uppercase tracking-widest clipped-corner"
+          className="mt-10 group relative bg-primary text-on-primary px-8 py-3 font-headline font-bold uppercase tracking-widest clipped-corner hover:shadow-glow transition-all duration-300 btn-glow"
         >
           {t.navInitiate}
+          <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 clipped-corner transition-opacity"></span>
         </button>
       </div>
     </>

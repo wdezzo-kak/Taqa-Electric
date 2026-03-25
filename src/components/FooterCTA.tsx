@@ -7,17 +7,46 @@ interface FooterCTAProps {
 }
 
 export default function FooterCTA({ t }: FooterCTAProps) {
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact')
+    if (element) {
+      const headerOffset = 100
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
-    <section className="py-10 md:py-16 px-4 md:px-10 bg-primary-container relative overflow-hidden group">
+    <section className="py-10 md:py-16 px-4 md:px-10 bg-primary relative overflow-hidden group">
+      {/* Background effects */}
       <div className="absolute inset-0 circuit-trace opacity-10"></div>
+      <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/10 rounded-full blur-[80px] animate-blob"></div>
+      <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-white/10 rounded-full blur-[80px] animate-blob" style={{ animationDelay: '2s' }}></div>
+      
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-10 w-px h-full bg-white/10"></div>
+      <div className="absolute top-0 right-10 w-px h-full bg-white/10"></div>
+      
+      {/* Diagonal lines */}
+      <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-[1px] h-full bg-white/10 transform rotate-45 origin-bottom-right"></div>
+      </div>
+      
       <div className="relative z-10 text-center flex flex-col items-center">
-        <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-headline font-black uppercase tracking-tighter text-on-primary-container mb-6 md:mb-8 leading-none">
+        <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-headline font-bold uppercase tracking-tight text-on-primary mb-6 md:mb-8 leading-[1.1]">
           {t.ctaTitle}
         </h2>
-        <p className="text-on-primary-container/90 text-sm md:text-base lg:text-lg font-medium mb-6 md:mb-8 max-w-2xl lg:max-w-3xl tracking-tight px-4">
+        <p className="text-on-primary/90 text-sm md:text-base lg:text-lg font-medium mb-6 md:mb-8 max-w-2xl lg:max-w-3xl tracking-tight px-4">
           {t.ctaDesc}
         </p>
-        <button className="bg-white text-primary-container px-6 md:px-8 lg:px-10 xl:px-16 py-3 md:py-4 lg:py-5 xl:py-8 font-headline font-bold uppercase tracking-[0.2em] text-sm md:text-base lg:text-xl hover:scale-105 transition-transform clipped-corner shadow-2xl w-full md:w-auto max-w-sm">
+        <button 
+          onClick={scrollToContact}
+          className="bg-on-surface text-primary px-6 md:px-8 lg:px-10 xl:px-16 py-3 md:py-4 lg:py-5 xl:py-8 font-headline font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:scale-105 hover:shadow-glow-lg transition-all duration-300 clipped-corner w-full md:w-auto max-w-sm btn-glow group-hover:shadow-glow"
+        >
           {t.ctaBtn}
         </button>
       </div>
