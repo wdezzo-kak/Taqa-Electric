@@ -31,19 +31,19 @@ export default function StatsBar({ t }: StatsBarProps) {
   ]
 
   return (
-    <div className="w-full bg-surface-container-lowest py-4 md:py-6 lg:py-8 overflow-hidden relative">
+    <div className="w-full bg-surface-container-lowest py-3 sm:py-4 md:py-6 lg:py-8 overflow-hidden relative">
       <div className="absolute inset-0 diagonal-stripes opacity-30"></div>
-      <div className="flex flex-wrap whitespace-nowrap gap-4 md:gap-6 lg:gap-12 items-center justify-around px-4 md:px-8 lg:px-10 relative z-10">
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-12 px-3 sm:px-4 md:px-8 lg:px-10 relative z-10">
         {stats.map((stat, index) => (
-          <Animation key={index} delay={index * 100} direction="scale" className="flex flex-col text-center md:text-left group">
-            <span className={`${stat.color} text-lg md:text-2xl lg:text-3xl xl:text-4xl font-headline font-bold group-hover:scale-110 transition-transform duration-300`}>
+          <Animation key={index} delay={index * 100} direction="scale" className="flex flex-col text-center group px-2 sm:px-0">
+            <span className={`${stat.color} text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-headline font-bold group-hover:scale-110 transition-transform duration-300`}>
               {stat.value.num > 0 ? (
                 <Counter end={stat.value.num} suffix={stat.value.suffix} delay={index * 150} duration={2000} />
               ) : (
                 stat.value.suffix
               )}
             </span>
-            <span className="text-[10px] tracking-[0.3em] text-on-surface-variant uppercase font-bold group-hover:text-on-surface transition-colors duration-300">
+            <span className="text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] text-on-surface-variant uppercase font-bold group-hover:text-on-surface transition-colors duration-300">
               {stat.label}
             </span>
           </Animation>

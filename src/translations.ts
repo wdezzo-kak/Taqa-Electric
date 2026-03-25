@@ -131,7 +131,7 @@ export const translations = {
     phoneLine: 'Phone Line',
     emailTerminal: 'Email Terminal',
     locationBase: 'Operational Base',
-    location: 'Al-Amarat, Khartoum',
+    location: 'Al Wadi Street – Al Mahdawi Intersection, Omdurman',
     engineersOnline: 'Engineers Online',
     engineersMsg: 'Our technical staff is currently monitoring grid performance. Consultation responses typical within 4 operational hours.',
     
@@ -142,7 +142,7 @@ export const translations = {
     
     // Footer
     footerDesc: "Sudan's leading solar engineering firm. Deploying reliable energy infrastructure for residential, agricultural, and industrial sectors.",
-    footerTagline: 'Sudan HQ • Al-Amarat, Khartoum',
+    footerTagline: 'Sudan HQ • Al Mahdawi, Omdurman',
     footerCompanyName: 'TAQA ELECTRIC',
     systems: 'Systems',
     support: 'Support',
@@ -192,7 +192,7 @@ export const translations = {
     statsVal1: '99.9%',
     statsVal2: '+500 ألف',
     statsVal3: '+25',
-    statsVal4: 'الخرطوم',
+    statsVal4: 'أم درمان',
     
     // Vision
     visionLabel: 'رؤيتنا',
@@ -251,7 +251,7 @@ export const translations = {
     hw1Sub: 'كفاءة ثنائية الأوجه',
     hw2Name: 'MaxPower الهجين',
     hw2Sub: 'إدارة ذكية',
-    hw3Name: 'بطاريات Go Green الليثيوم',
+    hw3Name: 'بطاريات الليثيوم Go Green',
     hw3Sub: 'تخزين طويل الأمد',
     hw4Name: 'INVT Solar VFD',
     hw4Sub: 'التحكم في الري',
@@ -290,7 +290,7 @@ export const translations = {
     phoneLine: 'خط الهاتف',
     emailTerminal: 'البريد الإلكتروني',
     locationBase: 'قاعدة العمليات',
-    location: 'العمارات، الخرطوم',
+    location: 'شارع الوادي – تقاطع المهدوي، أم درمان',
     engineersOnline: 'المهندسون متصلون',
     engineersMsg: 'يقوم طاقمنا الفني حالياً بمراقبة أداء الشبكة. الردود على الاستشارات تتم عادةً خلال 4 ساعات عمل.',
     
@@ -301,7 +301,7 @@ export const translations = {
     
     // Footer
     footerDesc: 'شركة الطاقة الشمسية الرائدة في السودان. نقوم بنشر البنية التحتية للطاقة الموثوقة للقطاعات السكنية والزراعية والصناعية.',
-    footerTagline: 'مقر السودان • العمارات، الخرطن',
+    footerTagline: 'مقر السودان • المهدوي، أم درمان',
     footerCompanyName: 'طاقة إلكتريك',
     systems: 'الأنظمة',
     support: 'الدعم',

@@ -12,9 +12,10 @@ interface HeaderProps {
     navInitiate: string
     companyName: string
   }
+  lang: 'en' | 'ar'
 }
 
-export default function Header({ t }: HeaderProps) {
+export default function Header({ t, lang }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -111,10 +112,10 @@ export default function Header({ t }: HeaderProps) {
           <div className="flex items-center gap-2 md:gap-4">
             <button 
               onClick={scrollToContact}
-              className="group relative bg-primary text-on-primary font-label tracking-tighter uppercase font-bold text-[10px] md:text-xs px-3 md:px-4 py-1.5 md:py-2 clipped-corner hover:bg-primary-light hover:shadow-glow transition-all duration-200 btn-glow"
+              className={`group relative bg-primary text-on-primary font-label tracking-tighter uppercase font-bold text-[10px] md:text-xs px-3 md:px-4 py-1.5 md:py-2 ${lang === 'ar' ? 'clipped-corner-rtl' : 'clipped-corner'} hover:bg-primary-light hover:shadow-glow transition-all duration-200 btn-glow`}
             >
               {t.navInitiate}
-              <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 clipped-corner transition-opacity"></span>
+              <span className={`absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 ${lang === 'ar' ? 'clipped-corner-rtl' : 'clipped-corner'} transition-opacity`}></span>
             </button>
             {/* Hamburger - shown on tablet 768-1024px */}
             <button 
@@ -133,31 +134,31 @@ export default function Header({ t }: HeaderProps) {
       {/* Mobile Menu Overlay - Enhanced */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
         <button 
-          className="absolute top-5 right-5 text-on-surface/70 hover:text-primary transition-colors p-2"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 text-on-surface/70 hover:text-primary transition-colors p-2"
           onClick={() => setMobileMenuOpen(false)}
           aria-label="Close menu"
         >
-          <span className="material-symbols-outlined text-3xl">close</span>
+          <span className="material-symbols-outlined text-2xl sm:text-3xl">close</span>
         </button>
         
         {/* Animated logo in mobile menu */}
-        <div className="flex items-center gap-3 mb-8">
+        <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8 mt-8 sm:mt-0">
           <img 
             alt="TAQA Logo" 
-            className="h-10 w-auto" 
+            className="h-8 sm:h-10 w-auto" 
             src="/assets/images/white-logo.png"
           />
-          <span className="text-xl font-bold tracking-tight text-primary uppercase font-label">
+          <span className="text-lg sm:text-xl font-bold tracking-tight text-primary uppercase font-label">
             {t.companyName}
           </span>
         </div>
         
-        <div className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-5 sm:gap-6 px-4">
           {navLinks.map((link) => (
             <a 
               key={link.label}
               href={link.href}
-              className="text-xl font-headline font-bold uppercase tracking-widest hover:text-primary transition-colors relative group"
+              className="text-base sm:text-lg md:text-xl font-headline font-bold uppercase tracking-widest hover:text-primary transition-colors relative group"
               onClick={(e) => handleNavClick(e, link.href, true)}
             >
               {link.label}
@@ -167,10 +168,10 @@ export default function Header({ t }: HeaderProps) {
         </div>
         <button 
           onClick={(e) => { scrollToContact(e); setMobileMenuOpen(false); }}
-          className="mt-10 group relative bg-primary text-on-primary px-8 py-3 font-headline font-bold uppercase tracking-widest clipped-corner hover:shadow-glow transition-all duration-300 btn-glow"
+          className={`mt-8 sm:mt-10 group relative bg-primary text-on-primary px-6 sm:px-8 py-2.5 sm:py-3 font-headline font-bold uppercase tracking-widest ${lang === 'ar' ? 'clipped-corner-rtl' : 'clipped-corner'} hover:shadow-glow transition-all duration-300 btn-glow`}
         >
           {t.navInitiate}
-          <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 clipped-corner transition-opacity"></span>
+          <span className={`absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 ${lang === 'ar' ? 'clipped-corner-rtl' : 'clipped-corner'} transition-opacity`}></span>
         </button>
       </div>
     </>

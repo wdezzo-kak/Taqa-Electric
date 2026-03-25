@@ -12,25 +12,28 @@ export default function TopBar({ lang, setLang, t }: TopBarProps) {
   const phoneNumber = '+249912345678'
   const email = t.topbarEmail
 
+
+
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] bg-surface-container-lowest border-b border-outline-variant/10 px-4 md:px-8 py-2 md:py-1.5 flex justify-between items-center text-[10px] md:text-xs font-bold tracking-widest uppercase text-on-surface-variant/80">
-      <div className="flex items-center gap-4 md:gap-6">
+    <div className="fixed top-0 left-0 right-0 z-[60] bg-surface-container-lowest border-b border-outline-variant/10 px-3 md:px-8 py-2 md:py-1.5 flex justify-between items-center text-[9px] md:text-xs font-bold tracking-widest uppercase text-on-surface-variant/80">
+      <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
         <a 
           href={`https://wa.me/${phoneNumber.replace(/\D/g, '')}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1.5 md:gap-2 hover:text-primary transition-colors"
+          className="flex items-center gap-1 sm:gap-1.5 md:gap-2 hover:text-primary transition-colors"
         >
-          <span className="material-symbols-outlined text-[14px] md:text-[16px]">call</span> 
-          <span className="hidden xs:inline sm:hidden md:inline" dir="ltr">{t.topbarPhone}</span>
-          <span className="xs:hidden" dir="ltr">{t.topbarWhatsapp}</span>
+          <span className="material-symbols-outlined text-[12px] sm:text-[14px] md:text-[16px]">call</span> 
+          <span className="hidden xs:block sm:hidden text-[8px]" dir="ltr">{t.topbarPhone}</span>
+          <span className="hidden sm:block" dir="ltr">{t.topbarPhone}</span>
         </a>
         <a 
           href={`mailto:${email}`}
-          className="hidden md:flex items-center gap-2 hover:text-primary transition-colors"
+          className="flex items-center gap-1 sm:gap-1.5 md:gap-2 hover:text-primary transition-colors"
         >
-          <span className="material-symbols-outlined text-[14px] md:text-[16px]">mail</span> 
-          {email}
+          <span className="material-symbols-outlined text-[12px] sm:text-[14px] md:text-[16px]">mail</span> 
+          <span className="hidden xs:block sm:hidden text-[7px]" dir="ltr">{email}</span>
+          <span className="hidden sm:block" dir="ltr">{email}</span>
         </a>
       </div>
       <div className="flex items-center gap-3 md:gap-4">
